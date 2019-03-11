@@ -4,3 +4,54 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:4.0.4"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: "com.github.johnrengelman.shadow"
+
+jar.enabled = false
+
+shadowJar {
+    baseName = 'dates-and-times-in-jdk1.8'
+    classifier = null
+    version = 'v1.0.0'
+    manifest {
+        attributes 'Main-Class': 'com.liumapp.tutorials.time.Console'
+    }
+}
+
+repositories {
+    mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.beryx:text-io:3.3.0'
+    compile 'com.liumapp.qtools.property:qtools-property:v1.3.6'
+    compile 'com.liumapp.qtools.file:qtools-file:v1.3.6'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.9.0'
+}
+
+group = 'com.liumapp.tutorials.time'
+version = 'v1.0.0'
+description = 'jdk1.8的时间及时区使用方法'
+sourceCompatibility = '1.8'
+assemble.dependsOn(shadowJar)
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
