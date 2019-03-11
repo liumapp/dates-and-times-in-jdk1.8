@@ -10,6 +10,12 @@ package com.liumapp.tutorials.time.enums;
  */
 public enum Tutorials {
 
+    CreatingDatesAndTimesTutorials,
 
+    ManipulatingDatesAndTimesTutorials,
+
+    WorkingWithPeriodsTutorials,
+
+    ParsingDatesAndTimesTutorials
 
 }
