@@ -37,8 +37,10 @@ public class CreatingDatesAndTimesTutorials implements SimpleTutorials {
     }
 
     private void demo1 () {
+        Console.textIO.getTextTerminal().println("demo1介绍了用最简单的方式，使用jdk1.8所提供的时间方法来获取当前时间：");
         Console.textIO.getTextTerminal().println("a simple demo of LocalDate : " + LocalDate.now());
         Console.textIO.getTextTerminal().println("a simple demo of LocalTime :" + LocalTime.now());
+        Console.textIO.getTextTerminal().println("Java使用T来分隔日期和时间戳");
         Console.textIO.getTextTerminal().println("a simple demo of LocalDateTime : " + LocalDateTime.now());
         Console.textIO.getTextTerminal().println("a simple demo of ZonedDateTime :" + ZonedDateTime.now());
     }
