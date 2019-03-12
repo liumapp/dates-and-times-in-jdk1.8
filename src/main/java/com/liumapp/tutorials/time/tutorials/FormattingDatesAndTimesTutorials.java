@@ -13,7 +13,7 @@ import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
     @Override
     public String showHelpInfo() {
-        return null;
+        return "演示时间日期格式的使用方法\n";
     }
 
     @Override
@@ -26,7 +26,10 @@ public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
         return "done...\n";
     }
 
+    /**
+     *
+     */
     private void demo1 () {
-
+        
     }
 }
