@@ -48,9 +48,26 @@ public class WorkingWithPeriodsTutorials implements SimpleTutorials {
     }
 
     /**
-     * 将LocalDate、LocalDateTime、zonedDateTime等时间转换为距离1970年1月1日的时间戳
+     * 在demo1的基础上使用periods修改
      */
     private void demo2 () {
+        Console.textIO.getTextTerminal().println("demo2时在demo1的基础上使用periods修改");
+        LocalDate A = LocalDate.of(2019, Month.MARCH, 1);
+        LocalDate B = LocalDate.of(2019, Month.JULY, 30);
+        Period period = Period.ofMonths(1);
+        while (A.isBefore(B)) {
+            Console.textIO.getTextTerminal().println("the system found A is early than B , so print the msg");
+            Console.textIO.getTextTerminal().println("A is : " + A + " B is : " + B);
+            A = A.plus(period);
+        }
+        Console.textIO.getTextTerminal().println("Now A is late than B ...");
+        Console.textIO.getTextTerminal().println("A is : " + A + " B is : " + B);
+    }
+
+    /**
+     * 将LocalDate、LocalDateTime、zonedDateTime等时间转换为距离1970年1月1日的时间戳
+     */
+    private void demo3 () {
         Console.textIO.getTextTerminal().println("demo2演示了将LocalDate、LocalDateTime、zonedDateTime等时间转换为距离1970年1月1日的时间戳");
         LocalDate localDate = LocalDate.now();
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -67,10 +84,4 @@ public class WorkingWithPeriodsTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("注意，LocalTime是没有获取时间戳方法的，因为并没有具体的日期信息");
     }
 
-    /**
-     * 使用Period
-     */
-    private void demo3 () {
-
-    }
 }

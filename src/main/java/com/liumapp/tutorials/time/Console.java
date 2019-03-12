@@ -2,10 +2,7 @@ package com.liumapp.tutorials.time;
 
 import com.liumapp.tutorials.time.enums.Tutorials;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
-import com.liumapp.tutorials.time.tutorials.CreatingDatesAndTimesTutorials;
-import com.liumapp.tutorials.time.tutorials.ManipulatingDatesAndTimesTutorials;
-import com.liumapp.tutorials.time.tutorials.ParsingDatesAndTimesTutorials;
-import com.liumapp.tutorials.time.tutorials.WorkingWithPeriodsTutorials;
+import com.liumapp.tutorials.time.tutorials.*;
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
 
@@ -42,6 +39,9 @@ public class Console {
                 break;
             case WorkingWithPeriodsTutorials:
                 running(new WorkingWithPeriodsTutorials());
+                break;
+            case FormattingDatesAndTimesTutorials:
+                running(new FormattingDatesAndTimesTutorials());
                 break;
             case ParsingDatesAndTimesTutorials:
                 running(new ParsingDatesAndTimesTutorials());
