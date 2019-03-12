@@ -25,6 +25,7 @@ public class WorkingWithPeriodsTutorials implements SimpleTutorials {
             this.demo1();
             this.demo2();
             this.demo3();
+            this.demo4();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -51,7 +52,7 @@ public class WorkingWithPeriodsTutorials implements SimpleTutorials {
      * 在demo1的基础上使用periods修改
      */
     private void demo2 () {
-        Console.textIO.getTextTerminal().println("demo2时在demo1的基础上使用periods修改");
+        Console.textIO.getTextTerminal().println("demo2是在demo1的基础上使用periods修改");
         LocalDate A = LocalDate.of(2019, Month.MARCH, 1);
         LocalDate B = LocalDate.of(2019, Month.JULY, 30);
         Period period = Period.ofMonths(1);
@@ -65,10 +66,17 @@ public class WorkingWithPeriodsTutorials implements SimpleTutorials {
     }
 
     /**
-     * 将LocalDate、LocalDateTime、zonedDateTime等时间转换为距离1970年1月1日的时间戳
+     * 创建periods的不同方式
      */
     private void demo3 () {
-        Console.textIO.getTextTerminal().println("demo2演示了将LocalDate、LocalDateTime、zonedDateTime等时间转换为距离1970年1月1日的时间戳");
+        Console.textIO.getTextTerminal().println("demo3演示了创建periods的不同方式");
+    }
+
+    /**
+     * 将LocalDate、LocalDateTime、zonedDateTime等时间转换为距离1970年1月1日的时间戳
+     */
+    private void demo4 () {
+        Console.textIO.getTextTerminal().println("demo4演示了将LocalDate、LocalDateTime、zonedDateTime等时间转换为距离1970年1月1日的时间戳");
         LocalDate localDate = LocalDate.now();
         LocalDateTime localDateTime = LocalDateTime.now();
         ZonedDateTime zonedDateTime = ZonedDateTime.now();
