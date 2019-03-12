@@ -1,6 +1,11 @@
 package com.liumapp.tutorials.time.tutorials;
 
+import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 /**
  * file ManipulatingDatesAndTimesTutorials.java
@@ -26,7 +31,13 @@ public class ManipulatingDatesAndTimesTutorials implements SimpleTutorials {
         return "done...";
     }
 
+    /**
+     * 在已有的日期上添加日、周、月、年等信息
+     */
     private void demo1 () {
-
+        Console.textIO.getTextTerminal().println("demo1演示在已有的日期上添加日、周、月、年等信息：");
+        ZonedDateTime date = ZonedDateTime.now();
+        Console.textIO.getTextTerminal().println("增加一天的方法： date.plusDays(1) + " + date.plusDays(1));
+        
     }
 }

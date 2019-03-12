@@ -65,5 +65,6 @@ public class CreatingDatesAndTimesTutorials implements SimpleTutorials {
         calendar.set(2017, Calendar.JANUARY, 20, 19, 35, 12);
         Date date = calendar.getTime();
         Console.textIO.getTextTerminal().println("通过Calendar获取日期时间（相关代码见com.liumapp.tutorials.time.tutorials.CreatingDatesAndTimesTutorials下的demo2）：" + date);
+        Console.textIO.getTextTerminal().println("需要注意一点：在jdk1.8版本中，Month枚举是从1开始的，而jdk1.7及更早以前的版本，Calendar表示月的枚举是从0开始的");
     }
 }
