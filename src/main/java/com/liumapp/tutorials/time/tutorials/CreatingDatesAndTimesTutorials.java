@@ -19,10 +19,10 @@ public class CreatingDatesAndTimesTutorials implements SimpleTutorials {
     @Override
     public String showHelpInfo() {
         return "CreatingDatesAndTimesTutorials会介绍如何用最简单的方式获取日期、时间、时区\n" +
-                "* LocalDate 只有日期，没有时间戳和时区的概念\n" +
+                "* LocalDate 只有日期，没有时间和时区的概念\n" +
                 "* LocalTime 只有时间戳，没有日期和时区的概念\n" +
-                "* LocalDateTime 有日期和时间戳，但是没有时区的概念\n" +
-                "* ZonedDateTime 有日期、时间戳和时区\n" +
+                "* LocalDateTime 有日期和时间，但是没有时区的概念\n" +
+                "* ZonedDateTime 有日期、时间和时区\n" +
                 "Oracle建议我们忽略时区，除非真的必须要用到它。（不过企业应用一般都是要考虑这个玩意儿）";
     }
 
@@ -44,7 +44,7 @@ public class CreatingDatesAndTimesTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("demo1介绍了用最简单的方式，使用jdk1.8所提供的时间方法来获取当前时间：");
         Console.textIO.getTextTerminal().println("a simple demo of LocalDate, 获取当前日期： LocalDate.now() = " + LocalDate.now());
         Console.textIO.getTextTerminal().println("a simple demo of LocalTime， 获取当前时间：LocalTime.now() = " + LocalTime.now());
-        Console.textIO.getTextTerminal().println("Java使用T来分隔日期和时间戳");
+        Console.textIO.getTextTerminal().println("Java使用T来分隔日期和时间");
         Console.textIO.getTextTerminal().println("a simple demo of LocalDateTime，获取当前日期时间： LocalDateTime.now() = " + LocalDateTime.now());
         Console.textIO.getTextTerminal().println("a simple demo of ZonedDateTime，获取当前日期时间及时区：ZonedDateTime.now() = " + ZonedDateTime.now());
         Console.textIO.getTextTerminal().println("使用LocalDate获取指定的日期：");
