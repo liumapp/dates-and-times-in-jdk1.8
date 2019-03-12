@@ -13,11 +13,20 @@ import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 public class ManipulatingDatesAndTimesTutorials implements SimpleTutorials {
     @Override
     public String showHelpInfo() {
-        return null;
+        return "ManipulatingDatesAndTimesTutorials会介绍如何在已经获取到的时间信息上进行操作";
     }
 
     @Override
     public String run() {
-        return null;
+        try {
+            this.demo1();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "done...";
+    }
+
+    private void demo1 () {
+
     }
 }

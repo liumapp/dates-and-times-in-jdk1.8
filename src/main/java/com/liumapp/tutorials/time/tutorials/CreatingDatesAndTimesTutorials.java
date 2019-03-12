@@ -18,7 +18,8 @@ import java.util.Date;
 public class CreatingDatesAndTimesTutorials implements SimpleTutorials {
     @Override
     public String showHelpInfo() {
-        return "* LocalDate 只有日期，没有时间戳和时区的概念\n" +
+        return "CreatingDatesAndTimesTutorials会介绍如何用最简单的方式获取日期、时间、时区\n" +
+                "* LocalDate 只有日期，没有时间戳和时区的概念\n" +
                 "* LocalTime 只有时间戳，没有日期和时区的概念\n" +
                 "* LocalDateTime 有日期和时间戳，但是没有时区的概念\n" +
                 "* ZonedDateTime 有日期、时间戳和时区\n" +
