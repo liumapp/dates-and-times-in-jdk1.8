@@ -4,6 +4,8 @@ import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
 import java.time.*;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * file CreatingDatesAndTimesTutorials.java
@@ -39,11 +41,11 @@ public class CreatingDatesAndTimesTutorials implements SimpleTutorials {
      */
     private void demo1 () {
         Console.textIO.getTextTerminal().println("demo1介绍了用最简单的方式，使用jdk1.8所提供的时间方法来获取当前时间：");
-        Console.textIO.getTextTerminal().println("a simple demo of LocalDate : " + LocalDate.now());
-        Console.textIO.getTextTerminal().println("a simple demo of LocalTime :" + LocalTime.now());
+        Console.textIO.getTextTerminal().println("a simple demo of LocalDate, 获取当前日期： LocalDate.now() = " + LocalDate.now());
+        Console.textIO.getTextTerminal().println("a simple demo of LocalTime， 获取当前时间：LocalTime.now() = " + LocalTime.now());
         Console.textIO.getTextTerminal().println("Java使用T来分隔日期和时间戳");
-        Console.textIO.getTextTerminal().println("a simple demo of LocalDateTime : " + LocalDateTime.now());
-        Console.textIO.getTextTerminal().println("a simple demo of ZonedDateTime :" + ZonedDateTime.now());
+        Console.textIO.getTextTerminal().println("a simple demo of LocalDateTime，获取当前日期时间： LocalDateTime.now() = " + LocalDateTime.now());
+        Console.textIO.getTextTerminal().println("a simple demo of ZonedDateTime，获取当前日期时间及时区：ZonedDateTime.now() = " + ZonedDateTime.now());
         Console.textIO.getTextTerminal().println("使用LocalDate获取指定的日期：");
         Console.textIO.getTextTerminal().println("获取2017年1月20日的日期: LocalDate.of(2017, Month.JANUARY, 20) = " + LocalDate.of(2017, Month.JANUARY, 20));
         Console.textIO.getTextTerminal().println("使用LocalTime获取指定的时间：");
@@ -58,6 +60,9 @@ public class CreatingDatesAndTimesTutorials implements SimpleTutorials {
      */
     private void demo2 () {
         Console.textIO.getTextTerminal().println("demo2介绍了jdk1.7跟更早版本之前的时间方法：");
-        
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2017, Calendar.JANUARY, 20, 19, 35, 12);
+        Date date = calendar.getTime();
+        Console.textIO.getTextTerminal().println("通过Calendar获取日期时间（相关代码见com.liumapp.tutorials.time.tutorials.CreatingDatesAndTimesTutorials下的demo2）：" + date);
     }
 }
