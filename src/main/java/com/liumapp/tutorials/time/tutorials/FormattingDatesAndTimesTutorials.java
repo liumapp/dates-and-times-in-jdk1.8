@@ -2,7 +2,6 @@ package com.liumapp.tutorials.time.tutorials;
 
 import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
-import net.bytebuddy.asm.Advice;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -28,6 +27,7 @@ public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
     public String run() {
         try {
             this.demo1();
+            this.demo2();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -52,5 +52,13 @@ public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
         DateTimeFormatter mediumDateTime = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);//这种形式是最常用的
         Console.textIO.getTextTerminal().println("short format style : " + shortDateTime.format(dateTime));
         Console.textIO.getTextTerminal().println("medium format style : " + mediumDateTime.format(dateTime));
+    }
+
+    /**
+     * 创建自定义的时间日期格式
+     */
+    private void demo2 () {
+        Console.textIO.getTextTerminal().println("demo2演示了如何创建自定义的时间日期格式");
+
     }
 }
