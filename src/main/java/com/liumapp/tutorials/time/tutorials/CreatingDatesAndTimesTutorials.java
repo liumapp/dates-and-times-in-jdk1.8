@@ -3,10 +3,7 @@ package com.liumapp.tutorials.time.tutorials;
 import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 
 /**
  * file CreatingDatesAndTimesTutorials.java
@@ -43,5 +40,8 @@ public class CreatingDatesAndTimesTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("Java使用T来分隔日期和时间戳");
         Console.textIO.getTextTerminal().println("a simple demo of LocalDateTime : " + LocalDateTime.now());
         Console.textIO.getTextTerminal().println("a simple demo of ZonedDateTime :" + ZonedDateTime.now());
+        Console.textIO.getTextTerminal().println("使用LocalDate获取指定的日期：");
+        Console.textIO.getTextTerminal().println("获取2017年1月20日的日期: LocalDate.of(2017, Month.JANUARY, 20) = " + LocalDate.of(2017, Month.JANUARY, 20));
+        
     }
 }
