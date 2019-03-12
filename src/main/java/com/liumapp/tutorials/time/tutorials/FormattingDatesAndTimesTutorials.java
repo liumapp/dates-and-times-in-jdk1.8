@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 /**
  * file FormattingDatesAndTimesTutorials.java
@@ -47,6 +48,9 @@ public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("format of date time is : " + dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
 
         Console.textIO.getTextTerminal().println("当然也会有其他jdk自带的日期格式:");
-
+        DateTimeFormatter shortDateTime = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
+        DateTimeFormatter mediumDateTime = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);//这种形式是最常用的
+        Console.textIO.getTextTerminal().println("short format style : " + shortDateTime.format(dateTime));
+        Console.textIO.getTextTerminal().println("medium format style : " + mediumDateTime.format(dateTime));
     }
 }
