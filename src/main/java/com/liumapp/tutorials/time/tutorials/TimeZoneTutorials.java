@@ -23,6 +23,8 @@ public class TimeZoneTutorials implements SimpleTutorials {
     public String run() {
         try {
             this.demo1();
+            this.demo2();
+            this.demo3();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -30,10 +32,10 @@ public class TimeZoneTutorials implements SimpleTutorials {
     }
 
     /**
-     * jdk1.8中设置时区的方法
+     * jdk1.8中直接设置时区的方法
      */
     private void demo1 () {
-        Console.textIO.getTextTerminal().println("demo1演示了jdk1.8中设置时区的方法");
+        Console.textIO.getTextTerminal().println("demo1演示了jdk1.8中直接设置时区的方法");
         ZoneId zone = ZoneId.of("US/Eastern");
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
@@ -44,5 +46,23 @@ public class TimeZoneTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("方式一获取到的时间为：" + zonedDateTime1);
         Console.textIO.getTextTerminal().println("方式二获取到的时间为：" + zonedDateTime2);
         Console.textIO.getTextTerminal().println("方式三获取到的时间为：" + zonedDateTime3);
+    }
+
+    /**
+     * 查找指定的时区
+     */
+    private void demo2 () {
+        Console.textIO.getTextTerminal().println("demo2演示了如何查找指定的时区");
+        Console.textIO.getTextTerminal().println("通过查询shanghai这个关键词来打印上海所在的时区");
+        ZoneId.getAvailableZoneIds().stream().filter(z -> z.contains("Shanghai"))
+                .sorted().forEach(Console.textIO.getTextTerminal()::println);
+    }
+
+    /**
+     * 通过设置GMT/UTC的偏移量来更改时区
+     */
+    private void demo3 () {
+        Console.textIO.getTextTerminal().println("demo3演示了如何通过设置GMT/UTC的偏移量来更改时区");
+
     }
 }
