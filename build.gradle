@@ -43,7 +43,7 @@ repositories {
 dependencies {
     compile 'org.beryx:text-io:3.3.0'
     compile 'com.liumapp.qtools.property:qtools-property:v1.3.6'
-    compile 'com.liumapp.qtools.file:qtools-file:v1.3.6'
+    compile 'com.liumapp.qtools.pic:qtools-pic:v1.3.7'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.9.0'
 }

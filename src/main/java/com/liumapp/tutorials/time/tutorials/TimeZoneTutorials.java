@@ -54,7 +54,7 @@ public class TimeZoneTutorials implements SimpleTutorials {
      */
     private void demo2 () {
         Console.textIO.getTextTerminal().println("demo2演示了如何查找指定的时区");
-        Console.textIO.getTextTerminal().println("通过查询shanghai这个关键词来打印上海所在的时区");
+        Console.textIO.getTextTerminal().println("通过查询Shanghai这个关键词来打印上海所在的时区");
         ZoneId.getAvailableZoneIds().stream().filter(z -> z.contains("Shanghai"))
                 .sorted().forEach(Console.textIO.getTextTerminal()::println);
     }
@@ -67,7 +67,7 @@ public class TimeZoneTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("demo3演示了如何通过设置GMT/UTC的偏移量来更改时区");
         Console.textIO.getTextTerminal().println("通过GMT偏移量获取北京时间：");
         //首先获取GMT标准时间
-        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneOffset.UTC);
-        
+        ZonedDateTime zonedDateTime = ZonedDateTime.now();
+
     }
 }
