@@ -1,5 +1,6 @@
 package com.liumapp.tutorials.time;
 
+import com.liumapp.qtools.pic.AsciiPicTool;
 import com.liumapp.tutorials.time.enums.Tutorials;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 import com.liumapp.tutorials.time.tutorials.*;
@@ -20,6 +21,8 @@ public class Console {
 
     public static void main (String[] args) {
         textIO = TextIoFactory.getTextIO();
+        textIO.getTextTerminal().getProperties().setPaneWidth(1280);
+        textIO.getTextTerminal().getProperties().setPaneHeight(960);
         showPrimaryMenu();
     }
 
@@ -55,6 +58,7 @@ public class Console {
     }
 
     private static void running (SimpleTutorials simpleTutorials) {
+        textIO.getTextTerminal().println(AsciiPicTool.getMySelf());
         textIO.getTextTerminal().println(simpleTutorials.showHelpInfo());
         textIO.getTextTerminal().println(simpleTutorials.run());
     }
