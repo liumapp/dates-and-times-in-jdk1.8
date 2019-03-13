@@ -18,6 +18,8 @@ public enum Tutorials {
 
     FormattingDatesAndTimesTutorials,
 
-    ParsingDatesAndTimesTutorials
+    ParsingDatesAndTimesTutorials,
+
+    TimeZoneTutorials
 
 }

@@ -46,6 +46,9 @@ public class Console {
             case ParsingDatesAndTimesTutorials:
                 running(new ParsingDatesAndTimesTutorials());
                 break;
+            case TimeZoneTutorials:
+                running(new TimeZoneTutorials());
+                break;
             default:
         }
         showPrimaryMenu();
