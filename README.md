@@ -6,6 +6,10 @@
 
 ## 时区
 
+格林尼治天文台的标准时间: 首先我们要知道一个GMT(Greenwich Mean Time)，这玩意就是所谓的time zone zero，考虑时区偏移量zoneOffset的时候要跟他进行加减操作。
+
+世界标准时间：然后我们还要知道一个UTC（Coordinated Universal Time，没错，我也很好奇为啥Coo..U..Time的简写是UTC，谷歌后发现UTC是混杂了英文跟法文的缩写，所以UTC实际上并不是任何一个单词的缩写，仅仅用来代表Coo...U...Time），这玩意就是所谓的time zone standard，我们可以在这行代码里面看到它：
+
 全球一个24个时区，分为东1-12时区，西1-12时区，每个时区间隔1个小时，不过在代码里我们不用管这些，一般都是用UTC偏移量来表示。
 
 英国伦敦为标准的GMT/UTC时间，英国伦敦往西，每隔一个时区就是GMT-1/UTC-1
@@ -19,11 +23,6 @@
 具体用代码来获取时间就是：
 
 
-
-
-首先我们要知道一个GMT时区(Greenwich Mean Time)，这玩意就是所谓的time zone zero，考虑时区偏移量zoneOffset的时候要跟他进行加减操作。
-
-然后我们还要知道一个UTC时区（Coordinated Universal Time，没错，我也很好奇为啥Coo..U..Time的简写是UTC，谷歌后发现UTC是混杂了英文跟法文的缩写，所以UTC实际上并不是任何一个单词的缩写，仅仅用来代表Coo...U...Time），这玩意就是所谓的time zone standard，我们可以在这行代码里面看到它：
 
 ````java
 long secondNumber = localDateTime.toEpochSecond(ZoneOffset.UTC);
@@ -42,6 +41,10 @@ long secondNumber = localDateTime.toEpochSecond(ZoneOffset.UTC);
 没错，+N代表提前N个小时，-N代表增加N个小时...
 
 再具体一点：
+
+## 参考资料：
+
+* https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html
 
 
 
