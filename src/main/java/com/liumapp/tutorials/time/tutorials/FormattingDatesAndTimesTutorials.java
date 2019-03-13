@@ -59,6 +59,15 @@ public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
      */
     private void demo2 () {
         Console.textIO.getTextTerminal().println("demo2演示了如何创建自定义的时间日期格式");
-
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy, hh:mm");
+        Console.textIO.getTextTerminal().println("自定义时间格式：MMMM dd, yyyy, hh:mm，输出当前时间为：" + dateTimeFormatter.format(dateTime));
+        Console.textIO.getTextTerminal().println("注意事项：\n" +
+                "* M代表月，如果是一月的话，一个M输出1，两个M输出01，三个M输出Jan，四个M输出January\n" +
+                "* d代表日，如果是1号的话，一个d输出1，两个d输出01\n" +
+                "* y代表年，如果是2019年的话，两个y输出19，四个y输出2019，不允许出现1个y或者3个y的情况\n" +
+                "* hh与mm分别代表小时与分钟");
     }
+
+
 }
