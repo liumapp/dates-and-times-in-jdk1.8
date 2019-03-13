@@ -3,11 +3,13 @@ package com.liumapp.tutorials.time.tutorials;
 import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Date;
 
 /**
  * file FormattingDatesAndTimesTutorials.java
@@ -28,6 +30,7 @@ public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
         try {
             this.demo1();
             this.demo2();
+            this.demo3();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -69,5 +72,12 @@ public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
                 "* hh与mm分别代表小时与分钟");
     }
 
-
+    /**
+     * jdk1.7及更早以前版本的修改日期格式方法
+     */
+    private void demo3 () {
+        Console.textIO.getTextTerminal().println("demo3演示了jdk1.7及更早以前版本的修改日期格式方法");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+        Console.textIO.getTextTerminal().println("自定义时间格式：yyyy-mm-dd hh:mm:ss，输出当前时间为：" + simpleDateFormat.format(new Date()));
+    }
 }
