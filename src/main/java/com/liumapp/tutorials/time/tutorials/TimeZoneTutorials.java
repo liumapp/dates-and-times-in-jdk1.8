@@ -4,6 +4,7 @@ import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
 import java.time.*;
+import java.util.TimeZone;
 
 /**
  * file TimeZoneTutorials.java
@@ -59,10 +60,12 @@ public class TimeZoneTutorials implements SimpleTutorials {
     }
 
     /**
+     * 推荐使用这种方式：
      * 通过设置GMT/UTC的偏移量来更改时区
      */
     private void demo3 () {
         Console.textIO.getTextTerminal().println("demo3演示了如何通过设置GMT/UTC的偏移量来更改时区");
-
+        Console.textIO.getTextTerminal().println("通过GMT偏移量获取北京时间：");
+        
     }
 }
