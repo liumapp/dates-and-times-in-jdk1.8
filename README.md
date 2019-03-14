@@ -24,9 +24,13 @@
                 long seconds = instant.getEpochSecond();
             ````
             
-            seconds的值便是这种形式的时间戳                
+            seconds的值便是这种形式的时间戳     
+            
+    具体代码可以见案例中的UsingInstantTutorials                       
 
 * LocalDate&LocalTime&LocalDateTime&ZonedDateTime
+
+    
 
 * OffsetDateTime
 
