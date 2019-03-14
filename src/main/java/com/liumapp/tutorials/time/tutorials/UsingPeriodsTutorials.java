@@ -16,7 +16,7 @@ import java.time.*;
 public class UsingPeriodsTutorials implements SimpleTutorials {
     @Override
     public String showHelpInfo() {
-        return "";
+        return "UsingPeriodsTutorials介绍Period，一般是用来修改日、周、月、年级别的日期";
     }
 
     @Override
