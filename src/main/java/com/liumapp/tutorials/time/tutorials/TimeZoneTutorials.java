@@ -67,7 +67,12 @@ public class TimeZoneTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("demo3演示了如何通过设置GMT/UTC的偏移量来获取不同时区的时间");
         Console.textIO.getTextTerminal().println("通过GMT偏移量获取北京时间：");
         LocalDateTime localDateTime = LocalDateTime.now();
-        
+        Console.textIO.getTextTerminal().println("本地的当前时间为：" + localDateTime);
+        ZoneOffset zoneOffset = ZoneOffset.of("+2");
+        OffsetDateTime offsetDateTime = OffsetDateTime.of(localDateTime, zoneOffset);
+        Console.textIO.getTextTerminal().println("跟当前时区偏移两个时区的时间为: " + offsetDateTime);
+
+
 //        ZoneOffset offset = ZoneOffset.UTC;
 //        OffsetDateTime offsetDateTime = OffsetDateTime.of(localDateTime, offset);
 //        Console.textIO.getTextTerminal().println("本地当前时间为：" + localDateTime + "\n" +
