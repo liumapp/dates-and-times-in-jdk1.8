@@ -7,23 +7,34 @@
 
 * Instant
 
+    时间戳，常见的表现形式分两种：
     
+        * 年月日时分秒
+        
+            ````java
+                Instant instant = Instant.now();
+            ````
+            
+           直接打印instant便可以获得这种形式的时间戳 
+        
+        * 秒数，距离1970-01-01有多少秒
+        
+            ````java
+                Instant instant = Instant.now();
+                long seconds = instant.getEpochSecond();
+            ````
+            
+            seconds的值便是这种形式的时间戳
 
-* LocalDate
-
-* LocalTime
-
-* LocalDateTime
-
-* ZonedDateTime
+* LocalDate&LocalTime&LocalDateTime&ZonedDateTime
 
 * OffsetDateTime
 
 * DateTimeFormatter
 
-* Period
+* Period&Durations
 
-* Durations
+* 
 
 ## 时区
 
