@@ -140,6 +140,8 @@ long secondNumber = localDateTime.toEpochSecond(ZoneOffset.UTC);
 
 * https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html
 
+* https://www.boraji.com/java-8-offsetdatetime-example
+
 
 
 
