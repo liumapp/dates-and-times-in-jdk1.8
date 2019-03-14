@@ -34,7 +34,17 @@
 
 * Period&Durations
 
-* 
+* ChronoField
+
+* TemporalAdjusters
+
+## 如何将jdk1.7及以前版本的时间转换为jdk1.8版本的时间
+
+````java
+Date.toInstant();
+Date.from(Instant);
+Calendar.toInstant();
+````
 
 ## 时区
 
