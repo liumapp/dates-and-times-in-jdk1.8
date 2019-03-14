@@ -42,7 +42,9 @@
 
 * OffsetDateTime
 
+    以当前时间和GMT/UTC时间的偏差来计算新的时区时间
     
+    详情见TimeZoneTutorials    
 
 * DateTimeFormatter
 
@@ -87,6 +89,10 @@ gradle build
 * 直接在文件夹中双击./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar运行
 
 案例中的运行效果，都是取自com.liumapp.tutorials.time.tutorials包下的代码
+
+### 导入IDEA启动
+
+项目导入IDEA后，启动Console类的main方法即可
        
 ## 时区
 
