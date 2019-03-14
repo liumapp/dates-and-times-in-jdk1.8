@@ -72,6 +72,7 @@ public class TimeZoneTutorials implements SimpleTutorials {
                 "那么表示的意思是：我们本地时区当前的时间是2017-07-03T21:44:49.468，+08:00的意思是：\n" +
                 "本地时区的时间与GMT/UTC的标准时间提前了8个小时\n" +
                 "也就是说，此时此刻，GMT/UTC的标准时间，或者说英国伦敦的时间是2017-07-03T13:44:49.468\n");
+        
 
 //        LocalDateTime localDateTime = LocalDateTime.now();
 //        Console.textIO.getTextTerminal().println("本地的当前时间为：" + localDateTime);
