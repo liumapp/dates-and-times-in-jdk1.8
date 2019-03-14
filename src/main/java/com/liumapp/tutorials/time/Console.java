@@ -34,14 +34,17 @@ public class Console {
 
     private static void handleTutorial (Tutorials tutorials) {
         switch (tutorials) {
+            case UsingInstantTutorials:
+                running(new UsingInstantTutorials());
+                break;
             case CreatingDatesAndTimesTutorials:
                 running(new CreatingDatesAndTimesTutorials());
                 break;
             case ManipulatingDatesAndTimesTutorials:
                 running(new ManipulatingDatesAndTimesTutorials());
                 break;
-            case WorkingWithPeriodsTutorials:
-                running(new WorkingWithPeriodsTutorials());
+            case UsingPeriodsTutorials:
+                running(new UsingPeriodsTutorials());
                 break;
             case FormattingDatesAndTimesTutorials:
                 running(new FormattingDatesAndTimesTutorials());

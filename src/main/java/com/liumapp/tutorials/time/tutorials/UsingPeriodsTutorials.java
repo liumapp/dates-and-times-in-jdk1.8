@@ -6,14 +6,14 @@ import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 import java.time.*;
 
 /**
- * file WorkingWithPeriodsTutorials.java
+ * file UsingPeriodsTutorials.java
  * author liumapp
  * github https://github.com/liumapp
  * email liumapp.com@gmail.com
  * homepage http://www.liumapp.com
  * date 2019/3/11
  */
-public class WorkingWithPeriodsTutorials implements SimpleTutorials {
+public class UsingPeriodsTutorials implements SimpleTutorials {
     @Override
     public String showHelpInfo() {
         return "";
