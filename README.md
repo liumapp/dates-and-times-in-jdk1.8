@@ -70,7 +70,7 @@ gradle build
     
     运行后大概长这个样子：
     
-    
+    ![shellpoint.gif](https://github.com/liumapp/dates-and-times-in-jdk1.8/blob/master/data/shellpoint.gif)
 
 * 直接在文件夹中双击./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar运行
 
