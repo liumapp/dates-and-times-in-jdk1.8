@@ -58,9 +58,9 @@ gradle build
 
 编译成功后会在build/libs/目录下生成可执行jar包
 
-### 运行
+### 启动案例demo
 
-这个案例项目同时支持纯命令行界面与java swing风格界面，前者通过命令行启动，后者直接在文件夹中双击jar包即可。
+这个案例项目同时支持纯命令行界面与java swing风格的界面，前者通过命令行启动，后者直接在文件夹中双击jar包即可。
 
 * 通过shell命令行启动
     
@@ -68,11 +68,12 @@ gradle build
     java -jar ./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar
     ````
     
-    运行后大概长这个样子：
-    
-    ![shellpoint.gif](https://github.com/liumapp/dates-and-times-in-jdk1.8/blob/master/data/shellpoint.gif)
+    ![showpic.gif](https://github.com/liumapp/dates-and-times-in-jdk1.8/blob/master/data/showpic.gif?raw=true)
 
 * 直接在文件夹中双击./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar运行
+
+       
+        
 
 ## 时区
 
