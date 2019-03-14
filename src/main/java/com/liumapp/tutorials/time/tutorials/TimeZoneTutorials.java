@@ -66,7 +66,11 @@ public class TimeZoneTutorials implements SimpleTutorials {
     private void demo3 () {
         Console.textIO.getTextTerminal().println("demo3演示了如何通过设置GMT/UTC的偏移量来更改时区");
         Console.textIO.getTextTerminal().println("通过GMT偏移量获取北京时间：");
-        //首先获取GMT标准时间
+        LocalDateTime localDateTime = LocalDateTime.now();
+        ZoneOffset offset = ZoneOffset.UTC;
+        OffsetDateTime offsetDateTime = OffsetDateTime.of(localDateTime, offset);
+        Console.textIO.getTextTerminal().println("本地当前时间为：" + localDateTime + "\n" +
+                "GMT/UTC标准时间为：" + offsetDateTime);
         ZonedDateTime zonedDateTime = ZonedDateTime.now();
 
     }
