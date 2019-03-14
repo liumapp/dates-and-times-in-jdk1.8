@@ -24,7 +24,7 @@
                 long seconds = instant.getEpochSecond();
             ````
             
-            seconds的值便是这种形式的时间戳
+            seconds的值便是这种形式的时间戳                
 
 * LocalDate&LocalTime&LocalDateTime&ZonedDateTime
 
@@ -45,6 +45,34 @@ Date.toInstant();
 Date.from(Instant);
 Calendar.toInstant();
 ````
+
+## 如何使用案例代码
+
+### 编译
+
+直接在项目根目录下使用gradle执行编译命令：
+
+````shell
+gradle build
+````
+
+编译成功后会在build/libs/目录下生成可执行jar包
+
+### 运行
+
+这个案例项目同时支持纯命令行界面与java swing风格界面，前者通过命令行启动，后者直接在文件夹中双击jar包即可。
+
+* 通过shell命令行启动
+    
+    ````shell
+    java -jar ./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar
+    ````
+    
+    运行后大概长这个样子：
+    
+    
+
+* 直接在文件夹中双击./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar运行
 
 ## 时区
 
