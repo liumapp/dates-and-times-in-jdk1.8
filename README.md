@@ -72,9 +72,8 @@ gradle build
 
 * 直接在文件夹中双击./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar运行
 
+案例中的运行效果，都是取自com.liumapp.tutorials.time.tutorials包下的代码
        
-        
-
 ## 时区
 
 格林尼治天文台的标准时间: 首先我们要知道一个GMT(Greenwich Mean Time)，这玩意就是所谓的time zone zero，考虑时区偏移量zoneOffset的时候要跟他进行加减操作。
