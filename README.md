@@ -60,9 +60,11 @@
     
 * ChronoUnit
 
-   计时单位，详情见UsingChronoUnitTutorials
+   可以用不同的计时单位，来衡量两个时间点的关系，详情见UsingChronoUnitTutorials
 
 * TemporalAdjusters
+
+    
 
 * Clock
 
@@ -156,7 +158,7 @@ long secondNumber = localDateTime.toEpochSecond(ZoneOffset.UTC);
 
 * https://www.baeldung.com/java-period-duration
 
-
+* https://www.mkyong.com/java8/java-8-temporaladjusters-examples/
 
 
 
