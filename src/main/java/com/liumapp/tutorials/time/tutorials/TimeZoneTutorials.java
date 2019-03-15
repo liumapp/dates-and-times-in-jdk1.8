@@ -6,7 +6,6 @@ import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Set;
-import java.util.TimeZone;
 
 /**
  * file TimeZoneTutorials.java
@@ -87,7 +86,10 @@ public class TimeZoneTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("它的offsetDateTime表现形式为" + offsetDateTimeOfTokyo + "\n" +
                 "具体日期为：" + offsetDateTimeOfTokyo.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "\n" +
                 "或者" + offsetDateTimeOfTokyo2.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "\n" +
-                "或者" + offsetDateTimeOfTokyo3.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+                "或者" + offsetDateTimeOfTokyo3.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "\n" +
+                "那么同理，我们可以用OffsetDateTime.now(ZoneId.of(\"GMT+9\"))或者 OffsetDateTime.now(ZoneId.of(\"UTC+09:00\"))\n" +
+                "之类的形式，来获取世界上任意一个时区的时间，如果是东2时区，那么GMT+2，如果是西2时区，那么GMT-2，如果像周边小国，只跟我们\n" +
+                "隔了半个小时，那么UTC+08:30或者UTC+07:30即可");
     }
 
 }
