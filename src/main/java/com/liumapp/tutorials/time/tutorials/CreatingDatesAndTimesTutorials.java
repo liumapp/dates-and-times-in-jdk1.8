@@ -1,6 +1,7 @@
 package com.liumapp.tutorials.time.tutorials;
 
 import com.liumapp.tutorials.time.Console;
+import com.liumapp.tutorials.time.helper.ConsoleHelper;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
 import java.time.*;
@@ -30,6 +31,7 @@ public class CreatingDatesAndTimesTutorials implements SimpleTutorials {
     public String run() {
         try {
             this.demo1();
+            ConsoleHelper.showDividingLine();
             this.demo2();
         } catch (Exception e) {
             e.printStackTrace();

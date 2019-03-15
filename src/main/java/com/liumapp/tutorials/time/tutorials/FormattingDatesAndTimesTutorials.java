@@ -1,6 +1,7 @@
 package com.liumapp.tutorials.time.tutorials;
 
 import com.liumapp.tutorials.time.Console;
+import com.liumapp.tutorials.time.helper.ConsoleHelper;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
 import java.text.SimpleDateFormat;
@@ -29,7 +30,9 @@ public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
     public String run() {
         try {
             this.demo1();
+            ConsoleHelper.showDividingLine();
             this.demo2();
+            ConsoleHelper.showDividingLine();
             this.demo3();
         } catch (Exception e) {
             e.printStackTrace();
