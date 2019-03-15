@@ -43,4 +43,12 @@ public class ParsingDatesAndTimesTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("获取到的date对象为：" + date + "\n" +
                 "获取到的time对象为：" + time);
     }
+
+    /**
+     * OffsetDateTime转换为LocalDateTime
+     */
+    private void demo2 () {
+        Console.textIO.getTextTerminal().println("demo2演示OffsetDateTime转换为LocalDateTime");
+        
+    }
 }

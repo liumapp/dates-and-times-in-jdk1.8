@@ -61,31 +61,17 @@ public class TimeZoneTutorials implements SimpleTutorials {
 
     /**
      * 推荐使用这种方式：
-     * 通过设置GMT/UTC的偏移量来更改时区
+     * 通过GMT/UTC的偏移量来判断时区
      */
     private void demo3 () {
-        Console.textIO.getTextTerminal().println("demo3演示了如何通过设置GMT/UTC的偏移量来获取不同时区的时间");
+        Console.textIO.getTextTerminal().println("demo3演示了如何通过GMT/UTC的偏移量来判断时区");
         Console.textIO.getTextTerminal().println("通过GMT偏移量获取当前时间：");
         OffsetDateTime offsetDateTime = OffsetDateTime.now();
         Console.textIO.getTextTerminal().println(offsetDateTime + "\n");
-        Console.textIO.getTextTerminal().println("如果输出的时间是类似这种的：'2017-07-03T21:44:49.468+08:00'.\n" +
-                "那么表示的意思是：我们本地时区当前的时间是2017-07-03T21:44:49.468，+08:00的意思是：\n" +
+        Console.textIO.getTextTerminal().println("如果输出的时间是类似这种的：'2019-03-14T21:44:49.468+08:00'.\n" +
+                "那么表示的意思是：我们本地时区当前的时间是2019-03-14T21:44:49.468，+08:00的意思是：\n" +
                 "本地时区的时间与GMT/UTC的标准时间提前了8个小时\n" +
-                "也就是说，此时此刻，GMT/UTC的标准时间，或者说英国伦敦的时间是2017-07-03T13:44:49.468\n");
-        
-
-//        LocalDateTime localDateTime = LocalDateTime.now();
-//        Console.textIO.getTextTerminal().println("本地的当前时间为：" + localDateTime);
-//        ZoneOffset zoneOffset = ZoneOffset.of("+2");
-//        OffsetDateTime offsetDateTime = OffsetDateTime.of(localDateTime, zoneOffset);
-//        Console.textIO.getTextTerminal().println("跟当前时区偏移两个时区的时间为: " + offsetDateTime);
-
-
-//        ZoneOffset offset = ZoneOffset.UTC;
-//        OffsetDateTime offsetDateTime = OffsetDateTime.of(localDateTime, offset);
-//        Console.textIO.getTextTerminal().println("本地当前时间为：" + localDateTime + "\n" +
-//                "GMT/UTC标准时间为：" + offsetDateTime);
-//        ZonedDateTime zonedDateTime = ZonedDateTime.now();
-
+                "也就是说，此时此刻，GMT/UTC的标准时间，或者说英国伦敦的时间是2019-03-14T13:44:49.468\n");
     }
+
 }
