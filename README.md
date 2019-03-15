@@ -48,8 +48,16 @@
 
 * DateTimeFormatter
 
+    更改日期格式
+    
+    详情见FormattingDatesAndTimesTutorials
+
 * Period&Durations
 
+    Period用来修改日、周、月、年级别的日期，详情见UsingPeriodsTutorials
+    
+    Durations则是用来修改
+    
 * ChronoField
 
 * TemporalAdjusters

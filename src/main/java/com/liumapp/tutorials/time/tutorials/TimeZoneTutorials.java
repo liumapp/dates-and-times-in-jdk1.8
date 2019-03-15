@@ -69,8 +69,8 @@ public class TimeZoneTutorials implements SimpleTutorials {
      */
     private void demo3 () {
         Console.textIO.getTextTerminal().println("demo3演示了如何通过GMT/UTC的偏移量来获取不同时区的时间");
-        Console.textIO.getTextTerminal().println("通过GMT偏移量获取当前时间：");
-        OffsetDateTime offsetDateTime = OffsetDateTime.now();
+        Console.textIO.getTextTerminal().println("如果要通过GMT偏移量获取北京当前时间的话，因为北京时间是东8时区，所以要用GMT+8，得到的时间为：");
+        OffsetDateTime offsetDateTime = OffsetDateTime.now(ZoneId.of("GMT+8"));
         Console.textIO.getTextTerminal().println(offsetDateTime + "\n");
         Console.textIO.getTextTerminal().println("如果输出的时间是类似这种的：'2019-03-14T21:44:49.468+08:00'.\n" +
                 "那么表示的意思是：我们本地时区当前的时间是2019-03-14T21:44:49.468，+08:00的意思是：\n" +

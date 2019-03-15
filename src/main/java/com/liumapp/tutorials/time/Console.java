@@ -46,6 +46,9 @@ public class Console {
             case UsingPeriodsTutorials:
                 running(new UsingPeriodsTutorials());
                 break;
+            case UsingDurationsTutorials:
+                running(new UsingDurationsTutorials());
+                break;
             case FormattingDatesAndTimesTutorials:
                 running(new FormattingDatesAndTimesTutorials());
                 break;
