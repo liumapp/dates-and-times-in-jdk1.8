@@ -20,6 +20,8 @@ public enum Tutorials {
 
     UsingDurationsTutorials,
 
+    UsingChronoUnitTutorials,
+
     FormattingDatesAndTimesTutorials,
 
     ParsingDatesAndTimesTutorials,

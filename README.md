@@ -58,7 +58,9 @@
     
     Durations则是用来修改时、分、秒级别的时间，详情见UsingDurationsTutorials
     
-* ChronoField
+* ChronoUnit
+
+   计时单位，详情见UsingChronoUnitTutorials
 
 * TemporalAdjusters
 

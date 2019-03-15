@@ -50,6 +50,9 @@ public class Console {
             case UsingDurationsTutorials:
                 running(new UsingDurationsTutorials());
                 break;
+            case UsingChronoUnitTutorials:
+                running(new UsingChronoUnitTutorials());
+                break;
             case FormattingDatesAndTimesTutorials:
                 running(new FormattingDatesAndTimesTutorials());
                 break;
