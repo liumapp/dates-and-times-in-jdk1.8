@@ -30,6 +30,8 @@ public class TimeZoneTutorials implements SimpleTutorials {
             this.demo2();
             ConsoleHelper.showDividingLine();
             this.demo3();
+            ConsoleHelper.showDividingLine();
+            this.demo4();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -100,6 +102,14 @@ public class TimeZoneTutorials implements SimpleTutorials {
      */
     private void demo4 () {
         Console.textIO.getTextTerminal().println("demo4演示了将不同GMT偏移量的OffsetDateTime转换为LocalDateTime");
+        OffsetDateTime beijing = OffsetDateTime.now(ZoneId.of("GMT+8"));
+        OffsetDateTime tokyo = OffsetDateTime.now(ZoneId.of("GMT+9"));
+        Console.textIO.getTextTerminal().println("这里我们拿两个时区的时间作为例子，分别是北京东8时区的时间：" + beijing + "\n" +
+                "和日本东京东9时区的时间：" + tokyo);
+        Console.textIO.getTextTerminal().println("直接使用OffsetDateTime提供的toLocalDateTime()方法即可以转换为LocalDateTime\n" +
+                "比如北京的offsetDateTime转换后为：" + beijing.toLocalDateTime() + "\n" +
+                "而日本的offsetDateTime转换后为：" + tokyo.toLocalDateTime() + "\n" +
+                "其他类型的时间同理");
     }
 
 }
