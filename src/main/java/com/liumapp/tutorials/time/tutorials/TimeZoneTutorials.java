@@ -92,4 +92,11 @@ public class TimeZoneTutorials implements SimpleTutorials {
                 "隔了半个小时，那么UTC+08:30或者UTC+07:30即可");
     }
 
+    /**
+     * 将不同GMT偏移量的OffsetDateTime转换为LocalDateTime
+     */
+    private void demo4 () {
+
+    }
+
 }

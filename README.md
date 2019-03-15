@@ -152,7 +152,7 @@ long secondNumber = localDateTime.toEpochSecond(ZoneOffset.UTC);
 
 * https://www.mkyong.com/java8/java-8-period-and-duration-examples/
 
-
+* https://www.baeldung.com/java-period-duration
 
 
 

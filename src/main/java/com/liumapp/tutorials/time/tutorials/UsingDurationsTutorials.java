@@ -1,6 +1,11 @@
 package com.liumapp.tutorials.time.tutorials;
 
+import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
+
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 /**
  * file UsingDurationsTutorials.java
@@ -27,8 +32,23 @@ public class UsingDurationsTutorials implements SimpleTutorials {
         return "done...\n";
     }
 
+    /**
+     * 利用duration获取两个时间点的间隔时间
+     */
     private void demo1 () {
-        
+        Console.textIO.getTextTerminal().println("demo1演示了利用duration获取两个时间点的间隔时间");
+        OffsetDateTime beijing = OffsetDateTime.now(ZoneId.of("GMT+8"));//北京时间
+        OffsetDateTime tokyo = OffsetDateTime.now(ZoneId.of("GMT+9"));//东京时间
+        //关于DateTimeFormatter的用法请看FormattingDatesAndTimesTutorials
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
+        LocalDateTime start = LocalDateTime.parse(dateTimeFormatter.format(beijing), dateTimeFormatter);
+        LocalDateTime end = LocalDateTime.parse(dateTimeFormatter.format(tokyo), dateTimeFormatter);
+        Duration duration = Duration.between(start, end);
+        Console.textIO.getTextTerminal().println("当前北京时间和东京时间之间的duration值为：" + duration + "\n" +
+                "当然，就这么看的话估计看不出啥名堂");
+        long seconds = duration.getSeconds();
+        Console.textIO.getTextTerminal().println("通过duration，我们可以得到当前北京时间和东京时间隔了：" + seconds + "秒");
+
     }
 
 }
