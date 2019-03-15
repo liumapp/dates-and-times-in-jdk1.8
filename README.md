@@ -56,7 +56,7 @@
 
     Period用来修改日、周、月、年级别的日期，详情见UsingPeriodsTutorials
     
-    Durations则是用来修改
+    Durations则是用来修改时、分、秒级别的时间，详情见UsingDurationsTutorials
     
 * ChronoField
 
@@ -149,6 +149,9 @@ long secondNumber = localDateTime.toEpochSecond(ZoneOffset.UTC);
 * https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html
 
 * https://www.boraji.com/java-8-offsetdatetime-example
+
+* https://www.mkyong.com/java8/java-8-period-and-duration-examples/
+
 
 
 
