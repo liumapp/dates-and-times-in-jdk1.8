@@ -60,11 +60,11 @@
     
 * ChronoUnit
 
-   可以用不同的计时单位，来衡量两个时间点的关系，详情见UsingChronoUnitTutorials
+   翻译过来叫做计时单位，意思是这个类可以用不同的计时单位，来衡量两个时间点的关系，详情见UsingChronoUnitTutorials
 
 * TemporalAdjusters
 
-    
+   翻译过来叫临时调节器，意思是
 
 * Clock
 
