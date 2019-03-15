@@ -1,5 +1,6 @@
 package com.liumapp.tutorials.time.tutorials;
 
+import com.liumapp.tutorials.time.helper.ConsoleHelper;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
 /**
@@ -18,6 +19,16 @@ public class UsingChronoUnitTutorials implements SimpleTutorials {
 
     @Override
     public String run() {
-        return null;
+        try {
+            this.demo1();
+            ConsoleHelper.showDividingLine();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "done...\n";
+    }
+
+    private void demo1 () {
+
     }
 }
