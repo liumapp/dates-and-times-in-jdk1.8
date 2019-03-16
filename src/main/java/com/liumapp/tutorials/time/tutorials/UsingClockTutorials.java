@@ -13,11 +13,20 @@ import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 public class UsingClockTutorials implements SimpleTutorials {
     @Override
     public String showHelpInfo() {
-        return null;
+        return "UsingClockTutorials";
     }
 
     @Override
     public String run() {
-        return null;
+        try {
+            this.demo1();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "done...\n";
+    }
+
+    private void demo1 () {
+
     }
 }
