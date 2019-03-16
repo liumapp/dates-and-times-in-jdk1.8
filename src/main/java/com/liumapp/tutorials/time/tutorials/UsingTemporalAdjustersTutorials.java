@@ -56,6 +56,6 @@ public class UsingTemporalAdjustersTutorials implements SimpleTutorials {
      */
     private void demo2 () {
         Console.textIO.getTextTerminal().println("demo2演示了如何创建自定义的TemporalAdjusters");
-
+        
     }
 }
