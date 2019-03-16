@@ -22,6 +22,8 @@ public enum Tutorials {
 
     UsingChronoUnitTutorials,
 
+    UsingClockTutorials,
+
     UsingTemporalAdjustersTutorials,
 
     FormattingDatesAndTimesTutorials,

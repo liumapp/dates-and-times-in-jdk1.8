@@ -56,6 +56,9 @@ public class Console {
             case UsingTemporalAdjustersTutorials:
                 running(new UsingTemporalAdjustersTutorials());
                 break;
+            case UsingClockTutorials:
+                running(new UsingClockTutorials());
+                break;
             case FormattingDatesAndTimesTutorials:
                 running(new FormattingDatesAndTimesTutorials());
                 break;
