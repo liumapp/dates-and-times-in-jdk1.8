@@ -3,7 +3,7 @@ package com.liumapp.tutorials.time.tutorials;
 import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.adjusters.NextChristmas;
 import com.liumapp.tutorials.time.helper.ConsoleHelper;
-import com.liumapp.tutorials.time.interfaces.SimpleTutorials；
+import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
@@ -58,8 +58,6 @@ public class UsingTemporalAdjustersTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("demo2演示了如何创建自定义的TemporalAdjusters");
         LocalDate localDate = LocalDate.now();
         LocalDate nextChristmas = localDate.with(new NextChristmas());
-        LocalDate after13Month = localDate.with(new AfterSpecifiedMonth(13));
-        Console.textIO.getTextTerminal().println("借助Custom TemporalAdjusters获取到的下一个圣诞节为：" + nextChristmas + "\n" +
-                "13个月后的日期为：" + after13Month);
+        Console.textIO.getTextTerminal().println("借助Custom TemporalAdjusters获取到的下一个圣诞节为：" + nextChristmas + "\n");
     }
 }
