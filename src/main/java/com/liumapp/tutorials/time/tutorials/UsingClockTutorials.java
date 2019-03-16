@@ -48,6 +48,9 @@ public class UsingClockTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("通过clock获取系统时间戳的第二种方式（UTC）：" + clock1.instant());
         Console.textIO.getTextTerminal().println("通过clock获取东二时区的时间：" + clock2.instant());
         Console.textIO.getTextTerminal().println("通过clock获取本地系统的时区：" + clock + "，clock的源码中也是通过ZoneId.systemDefault()来获取本地系统的时区，所以我们直接使用ZoneId.systemDefault()也是可以的");
+        Console.textIO.getTextTerminal().println("通过clock获取系统当前时间戳的微妙数，虽然我们平时更喜欢用System.currentTimeInMillis()，但使用clock.millis()更高效，当前时间戳的微秒数为：" + clock.millis());
+
+
 
     }
 
