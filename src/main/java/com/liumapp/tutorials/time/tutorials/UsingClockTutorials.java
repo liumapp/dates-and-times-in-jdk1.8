@@ -1,6 +1,10 @@
 package com.liumapp.tutorials.time.tutorials;
 
+import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
+
+import java.time.Clock;
+import java.time.Instant;
 
 /**
  * file UsingClockTutorials.java
@@ -26,7 +30,16 @@ public class UsingClockTutorials implements SimpleTutorials {
         return "done...\n";
     }
 
+    /**
+     * get instant by clock
+     */
     private void demo1 () {
+        Clock clock = Clock.systemDefaultZone();
+        Instant instant = clock.instant();
+        Console.textIO.getTextTerminal().println("通过clock获取系统时间戳： " + instant);
+    }
+
+    private void demo2 () {
 
     }
 }
