@@ -1,9 +1,11 @@
 package com.liumapp.tutorials.time.tutorials;
 
 import com.liumapp.tutorials.time.Console;
+import com.liumapp.tutorials.time.helper.ConsoleHelper;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
 import java.time.Instant;
+import java.util.Date;
 
 /**
  * file UsingInstantTutorials.java
@@ -24,6 +26,8 @@ public class UsingInstantTutorials implements SimpleTutorials {
     public String run() {
         try {
             this.demo1();
+            ConsoleHelper.showDividingLine();
+            this.demo2();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -38,6 +42,15 @@ public class UsingInstantTutorials implements SimpleTutorials {
         Instant instant = Instant.now();
         Console.textIO.getTextTerminal().println("当前时间戳为：" + instant);
         Console.textIO.getTextTerminal().println("获取具体时间戳的秒（距离1970-01-01的秒数）:" + instant.getEpochSecond());
+    }
+
+    /**
+     * jdk1.7及更早版本获取时间戳的方法
+     */
+    private void demo2 () {
+        Console.textIO.getTextTerminal().println("jdk1.7及更早版本获取时间戳的方法");
+        Date date = new Date();
+        Console.textIO.getTextTerminal().println("通过date获取当前时间戳（距离1970的微秒数）" + date.getTime() + "更具体一点的时间为： " + date.toString());
     }
 
 
