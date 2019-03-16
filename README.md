@@ -9,22 +9,22 @@
 
     时间戳，常见的表现形式分两种：
     
-        * 年月日时分秒
+    * 年月日时分秒
+    
+        ````java
+            Instant instant = Instant.now();
+        ````
         
-            ````java
-                Instant instant = Instant.now();
-            ````
-            
-           直接打印instant便可以获得这种形式的时间戳 
+       直接打印instant便可以获得这种形式的时间戳 
+    
+    * 秒数，距离1970-01-01有多少秒
+    
+        ````java
+            Instant instant = Instant.now();
+            long seconds = instant.getEpochSecond();
+        ````
         
-        * 秒数，距离1970-01-01有多少秒
-        
-            ````java
-                Instant instant = Instant.now();
-                long seconds = instant.getEpochSecond();
-            ````
-            
-            seconds的值便是这种形式的时间戳     
+        seconds的值便是这种形式的时间戳     
             
     具体代码可以见案例中的UsingInstantTutorials
 
