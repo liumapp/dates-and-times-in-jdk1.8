@@ -6,6 +6,7 @@ import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
 import java.time.Clock;
 import java.time.Instant;
+import java.time.ZoneId;
 
 /**
  * file UsingClockTutorials.java
@@ -40,9 +41,12 @@ public class UsingClockTutorials implements SimpleTutorials {
         Clock clock = Clock.systemDefaultZone();
         Instant instant = clock.instant();
         Clock clock1 = Clock.systemUTC();
+        Clock clock2 = Clock.system(ZoneId.of("GMT+2"));
 
         Console.textIO.getTextTerminal().println("通过clock获取系统时间戳： " + instant);
         Console.textIO.getTextTerminal().println("通过clock获取系统时间戳的第二种方式（UTC）：" + clock1.instant());
+        Console.textIO.getTextTerminal().println("通过clock获取东二时区的时间：" + clock2.instant());
+
 
 
     }
