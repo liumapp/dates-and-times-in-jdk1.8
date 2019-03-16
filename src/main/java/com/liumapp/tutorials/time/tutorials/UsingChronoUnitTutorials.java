@@ -49,4 +49,11 @@ public class UsingChronoUnitTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("1978年3月2号0时0分距离现在" + now + "\n" +
                 "隔了:" + years + "年\n或者" + months + "月\n或者" + days + "天\n或者" + hours + "小时\n或者" + mins + "分钟\n");
     }
+
+    /**
+     * 获取指定时间单位的指定量之后的时间
+     */
+    private void demo2 () {
+
+    }
 }
