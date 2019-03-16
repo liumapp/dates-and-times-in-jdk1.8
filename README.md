@@ -66,9 +66,9 @@
 
    翻译过来叫临时调节器，跟ChronoUnit做对比的话，他可以帮助我们使用指定个数的时间单位获取未来或者过去的时间点
    
-   比如，今天是2019年3月16日，我可以通过TemporalAdjusters准确获取未来13个月（或者其他时间单位）后的时间
+   比如，今天是2019年3月16日，我可以通过创建一个自定义的TemporalAdjusters来准确获取未来13个月（或者其他时间单位）后的时间，或者获取下一个圣诞节、某人的生日等信息
    
-   详情见UsingTemporalAdjustersTutorials     
+   详情见UsingTemporalAdjustersTutorials
 
 * Clock
 
