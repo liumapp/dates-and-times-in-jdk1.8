@@ -4,7 +4,9 @@ import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.helper.ConsoleHelper;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
+import java.time.Clock;
 import java.time.Instant;
+import java.time.ZoneId;
 import java.util.Date;
 
 /**
@@ -38,10 +40,14 @@ public class UsingInstantTutorials implements SimpleTutorials {
      * 通过Instant获取当前时间戳
      */
     private void demo1 () {
-        Console.textIO.getTextTerminal().println("demo1演示了通过Instant获取当前时间戳");
+        Console.textIO.getTextTerminal().println("demo1演示了通过Instant获取当前时间戳，不过首先我们先来一段错误的代码：");
         Instant instant = Instant.now();
         Console.textIO.getTextTerminal().println("当前时间戳为：" + instant);
         Console.textIO.getTextTerminal().println("获取具体时间戳的秒（距离1970-01-01的秒数）:" + instant.getEpochSecond());
+
+        Console.textIO.getTextTerminal().println("正确的方式为：");
+        Instant instant1 = Instant.now(Clock.system(ZoneId.of("GMT+8")));
+        Console.textIO.getTextTerminal().println("东8时区的时间戳为：" + instant1);
     }
 
     /**
