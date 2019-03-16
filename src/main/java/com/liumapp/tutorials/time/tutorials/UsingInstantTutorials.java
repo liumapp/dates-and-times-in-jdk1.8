@@ -7,6 +7,7 @@ import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 /**
@@ -47,10 +48,7 @@ public class UsingInstantTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("当然，你也不要认为简单的设置时区后，就可以获取本地时区的时间戳，这里我们强行设置为东8时区：");
         Instant instant1 = Instant.now(Clock.system(ZoneId.of("GMT+8")));
         Console.textIO.getTextTerminal().println("然后得到的时间依然是UTC的标准时间：" + instant1);
-        Console.textIO.getTextTerminal().println("很无奈对吗？\n那么我一定要用Instant表示本地时区的时间戳怎么办？\n看下面的代码");
-
-
-
+        Console.textIO.getTextTerminal().println("很无奈对吗？");
     }
 
     /**
