@@ -54,7 +54,11 @@
 
 * Period&Durations
 
-    Period用来修改日、周、月、年级别的日期，详情见UsingPeriodsTutorials
+    Period用来修改日、周、月、年级别的日期
+    
+    比如我可以获取距离今天13个月，2周，3天后的新日期
+    
+    详情见UsingPeriodsTutorials
     
     Durations则是用来修改时、分、秒级别的时间，详情见UsingDurationsTutorials
     
