@@ -5,6 +5,7 @@ import com.liumapp.tutorials.time.helper.ConsoleHelper;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
 import java.time.Clock;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
 
@@ -27,6 +28,7 @@ public class UsingClockTutorials implements SimpleTutorials {
         try {
             this.demo1();
             ConsoleHelper.showDividingLine();
+            this.demo2();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -51,9 +53,22 @@ public class UsingClockTutorials implements SimpleTutorials {
     }
 
     /**
-     * 
+     * Clock与Duration结合使用，来进行时、分、秒级别的修改
      */
     private void demo2 () {
+        Console.textIO.getTextTerminal().println("demo2演示了Clock与Duration结合使用，来进行时、分、秒级别的修改");
+        Clock baseClock = Clock.systemDefaultZone();
 
+        Clock clock = Clock.offset(baseClock, Duration.ofHours(72));
+        Console.textIO.getTextTerminal().println("比当前时间后延72个小时的时间：" + clock.instant());
+
+        clock = Clock.offset(baseClock, Duration.ofHours(-72));
+        Console.textIO.getTextTerminal().println("比当前时间提前72个小时的时间：" + clock.instant());
     }
 }
+
+
+
+
+
+
