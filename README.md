@@ -15,7 +15,17 @@
             Instant instant = Instant.now();
         ````
         
-       直接打印instant便可以获得这种形式的时间戳 
+       直接打印instant便可以获得这种形式的时间戳，但是千万注意，直接使用这段代码打印出来的时间戳，并不是我们本地时区的时间戳！
+       
+       进入Instant.now()的源码，我们可以看到
+       
+       ````java
+       public static Clock systemUTC() {
+           return new SystemClock(ZoneOffset.UTC);
+       }
+       ````
+       
+       它所采用的时区为UTC标准时区的时间，也就是英国伦敦的时间，所以直接Instant.now()获取到的时间并不是我们北京时间，这一点跟new date()后默认是本地时间有很大区别。
     
     * 秒数，距离1970-01-01有多少秒
     
