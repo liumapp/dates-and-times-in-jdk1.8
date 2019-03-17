@@ -86,9 +86,13 @@
 
 * Clock
 
-        
+    Clock类是带有时区信息的时间处理类，用他可以获取不同时区的时间，也可以配合Duration，对时间进行时、分、秒级别的修改
+    
+    详情见UsingClockTutorials        
 
 * Ser
+
+    
 
 ## 如何将jdk1.7及以前版本的时间转换为jdk1.8版本的时间
 
