@@ -77,9 +77,15 @@ public class UsingDurationsTutorials implements SimpleTutorials {
      * 创建duration的不同方式
      */
     private void demo3 () {
-
+        Console.textIO.getTextTerminal().println("demo3演示了创建duration的不同方式");
+        Duration everyTwoHour = Duration.ofHours(2);
+        Duration everyThirtyMins = Duration.ofMinutes(30);
+        Duration everyThirtySeconds = Duration.ofSeconds(30);
+        LocalDateTime localDateTime = LocalDateTime.now();
+        Console.textIO.getTextTerminal().println("当前时间: " + localDateTime);
+        Console.textIO.getTextTerminal().println("2个小时后的时间：" + localDateTime.plus(everyTwoHour));
+        Console.textIO.getTextTerminal().println("30分钟后的时间：" + localDateTime.plus(everyThirtyMins));
+        Console.textIO.getTextTerminal().println("30秒后的时间：" + localDateTime.plus(everyThirtySeconds));
     }
-
-
 
 }

@@ -181,13 +181,45 @@ Durations跟Period相对应，它是用来修改时、分、秒级别的时间
 比如
 
 ````java
-
+Console.textIO.getTextTerminal().println("demo3演示了创建duration的不同方式");
+Duration everyTwoHour = Duration.ofHours(2);
+Duration everyThirtyMins = Duration.ofMinutes(30);
+Duration everyThirtySeconds = Duration.ofSeconds(30);
+LocalDateTime localDateTime = LocalDateTime.now();
+Console.textIO.getTextTerminal().println("当前时间: " + localDateTime);
+Console.textIO.getTextTerminal().println("2个小时后的时间：" + localDateTime.plus(everyTwoHour));
+Console.textIO.getTextTerminal().println("30分钟后的时间：" + localDateTime.plus(everyThirtyMins));
+Console.textIO.getTextTerminal().println("30秒后的时间：" + localDateTime.plus(everyThirtySeconds));
 ````
 
+更详细的案例可以在UsingDurationsTutorials中查看
 
 ## 7. ChronoUnit的使用案例
+
+ChronoUnit可以帮助我们用不同的时间单位衡量两个日期之间的间距
+
+比如
+
+````java
+Console.textIO.getTextTerminal().println("demo1演示用不同的时间单位，来衡量1978年3月2号0时0分距离此时此刻的间距");
+LocalDateTime old = LocalDateTime.of(1978, Month.MARCH, 2, 0, 0);
+LocalDateTime now = LocalDateTime.now();
+long years = ChronoUnit.YEARS.between(old, now);
+long months = ChronoUnit.MONTHS.between(old, now);
+long days = ChronoUnit.DAYS.between(old, now);
+long hours = ChronoUnit.HOURS.between(old, now);
+long mins = ChronoUnit.MINUTES.between(old, now);
+//你也可以用秒、微妙、纳秒这些单位
+Console.textIO.getTextTerminal().println("1978年3月2号0时0分距离现在" + now + "\n" +
+        "隔了:" + years + "年\n或者" + months + "月\n或者" + days + "天\n或者" + hours + "小时\n或者" + mins + "分钟\n");
+````
+
+更加详细的案例可以在UsingChronoUnit中查看
 	
 ## 8. TemporalAdjusters的使用案例
+
+
+
 
 ## 9. Clock的使用案例
 
