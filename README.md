@@ -12,9 +12,41 @@
 		* [remove images](#remove-images)
 	* [IDEA](#idea)
 
-## 如何运行案例代码
+## 1. 如何运行案例代码
 
-## Instant获取UTC标准时间
+### 1.1 编译
+
+直接在项目根目录下使用gradle执行编译命令：
+
+````shell
+gradle build
+````
+
+编译成功后会在build/libs/目录下生成可执行jar包
+
+### 1.2 直接启动案例demo
+
+这个案例项目同时支持纯命令行界面与java swing风格的界面，前者通过命令行启动，后者直接在文件夹中双击jar包即可。
+
+* 通过shell命令行启动
+    
+    ````shell
+    java -jar ./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar
+    ````
+    
+    ![showpic.gif](https://github.com/liumapp/dates-and-times-in-jdk1.8/blob/master/data/showpic.gif?raw=true)
+
+* 直接在文件夹中双击./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar运行
+
+案例中的运行效果，都是取自com.liumapp.tutorials.time.tutorials包下的代码
+
+### 1.3 导入IDEA启动
+
+项目导入IDEA后，启动Console类的main方法即可
+
+## 2. Instant获取UTC标准时间
+
+
 
 ## LocalDate与LocalTime与ZonedDateTime的创建与使用
 
@@ -126,45 +158,8 @@
     详情见UsingClockTutorials        
     
 
-## 如何将jdk1.7及以前版本的时间转换为jdk1.8版本的时间
-
-````java
-Date.toInstant();
-Date.from(Instant);
-Calendar.toInstant();
-````
-
 ## 如何使用案例代码
 
-### 编译
-
-直接在项目根目录下使用gradle执行编译命令：
-
-````shell
-gradle build
-````
-
-编译成功后会在build/libs/目录下生成可执行jar包
-
-### 启动案例demo
-
-这个案例项目同时支持纯命令行界面与java swing风格的界面，前者通过命令行启动，后者直接在文件夹中双击jar包即可。
-
-* 通过shell命令行启动
-    
-    ````shell
-    java -jar ./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar
-    ````
-    
-    ![showpic.gif](https://github.com/liumapp/dates-and-times-in-jdk1.8/blob/master/data/showpic.gif?raw=true)
-
-* 直接在文件夹中双击./build/libs/dates-and-times-in-jdk1.8-v1.0.0.jar运行
-
-案例中的运行效果，都是取自com.liumapp.tutorials.time.tutorials包下的代码
-
-### 导入IDEA启动
-
-项目导入IDEA后，启动Console类的main方法即可
        
 ## 时区
 
