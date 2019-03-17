@@ -4,9 +4,9 @@ import com.liumapp.tutorials.time.Console;
 import com.liumapp.tutorials.time.helper.ConsoleHelper;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * file ParsingDatesAndTimesTutorials.java
@@ -58,11 +58,14 @@ public class ParsingDatesAndTimesTutorials implements SimpleTutorials {
     }
 
     /**
-     * 老版本的date对象转LocalDateTime
-     * todo
+     * 老版本的date对象转ZonedDateTime
      */
     private void demo3 () {
-        
+        Console.textIO.getTextTerminal().println("demo3演示了将老版本的date对象转ZonedDateTime");
+        Date date = new Date();
+        Instant instant = date.toInstant();
+        ZonedDateTime zonedDateTime = instant.atZone(ZoneId.of("GMT+8"));
+        Console.textIO.getTextTerminal().println("最终得到的时间为：" + zonedDateTime);
     }
 
 
