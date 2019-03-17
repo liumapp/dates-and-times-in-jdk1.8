@@ -18,6 +18,7 @@
 * [10. 对日期进行格式化输出](#10-对日期进行格式化输出)
 * [11. 各种类型转ZonedDateTime](#11-各种类型转ZonedDateTime)
 * [12. 理解时区的概念](#12-理解时区的概念)
+* [13. 老版本的Date类型或者字符串转ZonedDateTime](#13-老版本的Date类型或者字符串转ZonedDateTime)
 
 ## 1. 如何运行案例代码
 
@@ -73,7 +74,7 @@ gradle build
    
    它所采用的时区为UTC标准时区的时间，也就是英国伦敦的时间，所以直接Instant.now()获取到的时间并不是我们北京时间，这一点跟new date()后默认是本地时间有很大区别
    
-   如果对于什么是时区，什么是UTC，什么是GMT的概念还不太理解，可以先看最后一节的内容
+   如果对于什么是时区，什么是UTC，什么是GMT的概念还不太理解，可以先看第12节的内容
 
 * 秒数，距离1970-01-01有多少秒
 
@@ -166,6 +167,10 @@ Console.textIO.getTextTerminal().println("增加一年的方法：date.plusYears
 ## 11. 各种类型转ZonedDateTime
 
 ## 12. 理解时区的概念
+
+## 13. 老版本的Date类型或者字符串转ZonedDateTime
+
+
 
 
 ## jdk1.8中新增的时间相关类
