@@ -1,6 +1,7 @@
 package com.liumapp.tutorials.time.tutorials;
 
 import com.liumapp.tutorials.time.Console;
+import com.liumapp.tutorials.time.helper.ConsoleHelper;
 import com.liumapp.tutorials.time.interfaces.SimpleTutorials;
 
 import java.time.LocalDate;
@@ -26,6 +27,10 @@ public class ParsingDatesAndTimesTutorials implements SimpleTutorials {
     public String run() {
         try {
             this.demo1();
+            ConsoleHelper.showDividingLine();
+            this.demo2();
+            ConsoleHelper.showDividingLine();
+            this.demo3();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -50,6 +55,14 @@ public class ParsingDatesAndTimesTutorials implements SimpleTutorials {
      */
     private void demo2 () {
         Console.textIO.getTextTerminal().println("demo2演示OffsetDateTime转换为LocalDateTime");
+    }
+
+    /**
+     * 老版本的date对象转LocalDateTime
+     * todo
+     */
+    private void demo3 () {
+        
     }
 
 
