@@ -93,12 +93,38 @@ jdk1.8中，新引入的时间处理类中，个人感觉以下四个应该会�
 * LocalDate包含年月日的信息
 
     比如
-
+    
+    ````java
+          LocalDate.now();//2019-03-17 
+    ````
+    
 * LocalTime包含时分秒的信息
+
+    比如
+    
+    ````java
+          LocalTime.now();//19:52:35.918，最后三位是微秒
+    ````
 
 * LocalDateTime包含年月日时分秒的信息
 
+    比如
+    
+    ````java
+          LocalDateTime.now();//2019-03-17T19:52:35.929，中间那个T是用来分隔日期与当日时间的
+    ````
+
 * ZonedDateTime包含年月日时分秒+时区的信息
+
+    比如
+    
+    ````java
+          ZonedDateTime.now();//2019-03-17T19:52:35.929+08:00[Asia/Shanghai]
+    ````
+    
+    ZonedDateTime因为包含了时区信息，所以它的结尾会是 "+8:00[Asia/Shanghai]"，+8:00代表UTC/GMT偏移量为东8个时区，如果是-2，那么就代表UTC/GMT偏移量为西2个时区
+    
+    [Asia/Shanghai]则是用城市名来简单代表所在的时区，一般而言，推荐使用UTC/GMT偏移量来表示时区   
 
 这四个类的使用方法在案例的CreatingDatesAndTimesTutorials中有详细介绍
 
