@@ -18,7 +18,6 @@
 * [10. 对日期进行格式化输出](#10-对日期进行格式化输出)
 * [11. 各种类型转ZonedDateTime](#11-各种类型转ZonedDateTime)
 * [12. 理解时区的概念](#12-理解时区的概念)
-* [13. 老版本的Date类型或者字符串转ZonedDateTime](#13-老版本的Date类型或者字符串转ZonedDateTime)
 * [参考资料](#参考资料)
 
 ## 1. 如何运行案例代码
@@ -243,78 +242,82 @@ Console.textIO.getTextTerminal().println("这个月的第一个天：" + firstDa
 
 ## 9. Clock的使用案例
 
+Clock类是带有时区信息的时间处理类，用他可以获取不同时区的时间，也可以配合Duration，对时间进行时、分、秒级别的修改
 
+比如：
+
+````java
+ Console.textIO.getTextTerminal().println("demo1演示了clock的一些简单方法");
+Clock clock = Clock.systemDefaultZone();
+Instant instant = clock.instant();
+Clock clock1 = Clock.systemUTC();
+ZonedDateTime time1 = clock1.instant().atZone(clock1.getZone());
+Clock clock2 = Clock.system(ZoneId.of("GMT+2"));
+ZonedDateTime time2 = clock2.instant().atZone(clock2.getZone());
+Clock clock3 = Clock.system(ZoneId.of("Asia/Shanghai"));
+ZonedDateTime time3 = clock3.instant().atZone(clock3.getZone());
+
+Console.textIO.getTextTerminal().println("通过clock获取系统时间戳： " + instant);
+Console.textIO.getTextTerminal().println("通过clock获取系统时间戳的第二种方式（UTC）：" + time1);
+Console.textIO.getTextTerminal().println("通过clock获取东二时区的时间：" + time2);
+Console.textIO.getTextTerminal().println("通过clock获取上海时间：" + time3);
+Console.textIO.getTextTerminal().println("通过clock获取本地系统的时区：" + clock + "，clock的源码中也是通过ZoneId.systemDefault()来获取本地系统的时区，所以我们直接使用ZoneId.systemDefault()也是可以的");
+Console.textIO.getTextTerminal().println("通过clock获取系统当前时间戳的微妙数，虽然我们平时更喜欢用System.currentTimeInMillis()，但使用clock.millis()更高效，当前时间戳的微秒数为：" + clock.millis());
+Console.textIO.getTextTerminal().println("注意，我们不能直接通过clock的instant来获取本地时区的时间，因为无论怎样设置，clock的instant都会是英国伦敦时间，即GMT标准时间/UTC世界标准时间");
+````
+    
+详情见UsingClockTutorials
 
 ## 10. 对日期进行格式化输出
 
+在jdk1.8中使用DateTimeFormatter来设置时间日期的格式
+
+比如
+
+````java
+Console.textIO.getTextTerminal().println("demo1是DateTimeFormatter改变日期格式的最简演示");
+LocalDate date = LocalDate.now();
+LocalTime time = LocalTime.now();
+LocalDateTime dateTime = LocalDateTime.now();
+Console.textIO.getTextTerminal().println("下面打印出来的日期格式都是jdk1.8中的标准日期格式（以ISO开头）：");
+Console.textIO.getTextTerminal().println("format of date is : " + date.format(DateTimeFormatter.ISO_LOCAL_DATE));
+Console.textIO.getTextTerminal().println("format of time is : " + time.format(DateTimeFormatter.ISO_LOCAL_TIME));
+Console.textIO.getTextTerminal().println("format of date time is : " + dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+
+Console.textIO.getTextTerminal().println("当然也会有其他jdk自带的日期格式:");
+DateTimeFormatter shortDateTime = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
+DateTimeFormatter mediumDateTime = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);//这种形式是最常用的
+Console.textIO.getTextTerminal().println("short format style : " + shortDateTime.format(dateTime));
+Console.textIO.getTextTerminal().println("medium format style : " + mediumDateTime.format(dateTime));
+````
+
+当然，也可以创建自定义的日期格式，详情见FormattingDatesAndTimesTutorials
+
 ## 11. 各种类型转ZonedDateTime
+
+一般来说，传统的时间戳由于并不一定会带有时区信息，所以我们不会直接拿时间戳转换为ZonedDateTime类型，而是先转换为LocalDate类型，并默认是使用的本地时区
+
+如果使用的是老版本的Date类，那么在Date类的实例也不一定会带有时区信息，所以我们转换为ZonedDateTime之前，一般是先将Date转换为UTC标准时间戳的Instant，再之后指定跟UTC的偏移量来获取本地时区的ZonedDateTime
+
+比如：
+
+````java
+Console.textIO.getTextTerminal().println("demo3演示了将老版本的date对象转ZonedDateTime");
+Date date = new Date();
+Instant instant = date.toInstant();
+ZonedDateTime zonedDateTime = instant.atZone(ZoneId.of("GMT+8"));
+Console.textIO.getTextTerminal().println("最终得到的时间为：" + zonedDateTime);
+````
+
+具体代码请见ParsingDatesAndTimesTutorials
 
 ## 12. 理解时区的概念
 
-## 13. 老版本的Date类型或者字符串转ZonedDateTime
+各种能够直接百度到的内容这里不多写，只记录关键性的东西：
 
+* 格林尼治天文台的标准时间: 首先我们要知道一个GMT(Greenwich Mean Time)，这玩意就是所谓的time zone zero，考虑时区偏移量zoneOffset的时候要跟他进行加减操作。
 
-
-
-## jdk1.8中新增的时间相关类
-
-* Instant
-
-
-
-* LocalDate&LocalTime&LocalDateTime&ZonedDateTime
-
-   
-
-* OffsetDateTime
-
-    以当前时间和GMT/UTC时间的偏差来计算新的时区时间
-    
-    详情见TimeZoneTutorials    
-
-* DateTimeFormatter
-
-    更改日期格式
-    
-    详情见FormattingDatesAndTimesTutorials
-
-* Period&Durations
-
-    Period用来修改日、周、月、年级别的日期
-    
-    比如我可以获取距离今天13个月，2周，3天后的新日期
-    
-    详情见UsingPeriodsTutorials
-    
-    Durations则是用来修改时、分、秒级别的时间，详情见UsingDurationsTutorials
-    
-* ChronoUnit
-
-   翻译过来叫做计时单位，意思是这个类可以用不同的计时单位，来衡量两个时间点的关系，详情见UsingChronoUnitTutorials
-
-* TemporalAdjusters
-
-   翻译过来叫临时调节器，意思是给定一个具体日期，我们可以通过定义调节器的temporal参数，来获取下一个日期。
-   
-   比如定义：每一年的第12个月的第25天，就可以获取到下一个圣诞节
-   
-   详情见UsingTemporalAdjustersTutorials
-
-* Clock
-
-    Clock类是带有时区信息的时间处理类，用他可以获取不同时区的时间，也可以配合Duration，对时间进行时、分、秒级别的修改
-    
-    详情见UsingClockTutorials        
-    
-
-## 如何使用案例代码
-
-       
-## 时区
-
-格林尼治天文台的标准时间: 首先我们要知道一个GMT(Greenwich Mean Time)，这玩意就是所谓的time zone zero，考虑时区偏移量zoneOffset的时候要跟他进行加减操作。
-
-世界标准时间：然后我们还要知道一个UTC（Coordinated Universal Time，没错，我也很好奇为啥Coo..U..Time的简写是UTC，谷歌后发现UTC是混杂了英文跟法文的缩写，所以UTC实际上并不是任何一个单词的缩写，仅仅用来代表Coo...U...Time），这玩意就是所谓的time zone standard，我们可以在这行代码里面看到它：
+* 世界标准时间：然后我们还要知道一个UTC（Coordinated Universal Time，其实这货跟GMT一样，没错，我也很好奇为啥Coo..U..Time的简写是UTC，谷歌后发现UTC是混杂了英文跟法文的缩写，所以UTC实际上并不是任何一个单词的缩写，仅仅用来代表Coo...U...Time），这玩意就是所谓的time zone standard
 
 全球一个24个时区，分为东1-12时区，西1-12时区，每个时区间隔1个小时，不过在代码里我们不用管这些，一般都是用UTC偏移量来表示。
 
@@ -326,27 +329,34 @@ Console.textIO.getTextTerminal().println("这个月的第一个天：" + firstDa
 
 美国华盛顿因为是西5时区，所以就是GMT-5/UTC-5
 
-具体用代码来获取时间就是：
-
-
+具体在代码来使用就是：
 
 ````java
-long secondNumber = localDateTime.toEpochSecond(ZoneOffset.UTC);
+Console.textIO.getTextTerminal().println("demo3演示了如何通过GMT/UTC的偏移量来获取不同时区的时间");
+Console.textIO.getTextTerminal().println("如果要通过GMT偏移量获取北京当前时间的话，因为北京时间是东8时区，所以要用GMT+8，得到的时间为：");
+OffsetDateTime offsetDateTime = OffsetDateTime.now(ZoneId.of("GMT+8"));
+Console.textIO.getTextTerminal().println(offsetDateTime + "\n");
+Console.textIO.getTextTerminal().println("如果输出的时间是类似这种的：'2019-03-14T21:44:49.468+08:00'.\n" +
+        "那么表示的意思是：我们本地时区当前的时间是2019-03-14T21:44:49.468，+08:00的意思是：\n" +
+        "本地时区的时间与GMT/UTC的标准时间提前了8个小时\n" +
+        "也就是说，此时此刻，GMT/UTC的标准时间，或者说英国伦敦的时间是2019-03-14T13:44:49.468\n");
+Console.textIO.getTextTerminal().println("那么如何通过GMT的偏移量获取指定时区的时间呢？\n" +
+        "我们这里以日本东京为例，因为东京是在东9时区，所以他的UTC/GMT偏移量为+9\n" +
+        "那么他的时间将会比我们晚一个小时");
+
+OffsetDateTime offsetDateTimeOfTokyo = OffsetDateTime.now(ZoneId.of("GMT+9"));
+OffsetDateTime offsetDateTimeOfTokyo2 = OffsetDateTime.now(ZoneId.of("UTC+09:00"));
+OffsetDateTime offsetDateTimeOfTokyo3 = OffsetDateTime.now(ZoneId.of("Etc/GMT-9"));
+Console.textIO.getTextTerminal().println("它的offsetDateTime表现形式为" + offsetDateTimeOfTokyo + "\n" +
+        "具体日期为：" + offsetDateTimeOfTokyo.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "\n" +
+        "或者" + offsetDateTimeOfTokyo2.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "\n" +
+        "或者" + offsetDateTimeOfTokyo3.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "\n" +
+        "那么同理，我们可以用OffsetDateTime.now(ZoneId.of(\"GMT+9\"))或者 OffsetDateTime.now(ZoneId.of(\"UTC+09:00\"))\n" +
+        "之类的形式，来获取世界上任意一个时区的时间，如果是东2时区，那么GMT+2，如果是西2时区，那么GMT-2，如果像周边小国，只跟我们\n" +
+        "隔了半个小时，那么UTC+08:30或者UTC+07:30即可");
 ````
 
-当然，这行代码是什么意思我们先不管他，但要知道一点，UTC跟GMT其实一样，都是time zone zero
-
-也就是说，下面这三种偏移量都代表提前两个小时：
-
-* +02:00
-
-* GMT+2
-
-* UTC+2
-
-没错，+N代表提前N个小时，-N代表增加N个小时...
-
-再具体一点：
+更具体的案例代码可以在TimeZonetutorials中查看
 
 ## 参考资料
 

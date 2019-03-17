@@ -38,7 +38,7 @@ public class ParsingDatesAndTimesTutorials implements SimpleTutorials {
     }
 
     /**
-     * 时间字符串转换为LocalDate与LocalTime对象
+     * 时间字符串转换为LocalDate、LocalTime对象
      */
     private void demo1 () {
         Console.textIO.getTextTerminal().println("demo1演示了如何把时间字符串转换为LocalDate与LocalTime对象");
