@@ -54,6 +54,7 @@ public class UsingClockTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("通过clock获取上海时间：" + time3);
         Console.textIO.getTextTerminal().println("通过clock获取本地系统的时区：" + clock + "，clock的源码中也是通过ZoneId.systemDefault()来获取本地系统的时区，所以我们直接使用ZoneId.systemDefault()也是可以的");
         Console.textIO.getTextTerminal().println("通过clock获取系统当前时间戳的微妙数，虽然我们平时更喜欢用System.currentTimeInMillis()，但使用clock.millis()更高效，当前时间戳的微秒数为：" + clock.millis());
+        Console.textIO.getTextTerminal().println("注意，我们不能直接通过clock的instant来获取本地时区的时间，因为无论怎样设置，clock的instant都会是英国伦敦时间，即GMT标准时间/UTC世界标准时间");
     }
 
     /**
