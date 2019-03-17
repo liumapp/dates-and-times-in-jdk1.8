@@ -128,10 +128,30 @@ jdk1.8中，新引入的时间处理类中，个人感觉以下四个应该会�
 
 这四个类的使用方法在案例的CreatingDatesAndTimesTutorials中有详细介绍
 
-
 ## 4. 对ZonedDateTime对象进行时间的修改
 
+在jdk1.8中，如果要修改时间的话，一般要借助Period与Duration，但是纯粹使用ZonedDateTime的本身方法也是可以在一定程度上修改时间的
+
+比如
+
+````java
+Console.textIO.getTextTerminal().println("demo1演示jdk1.8版本的在已有的日期上添加秒、分、时、日、周、月、年等信息：");
+ZonedDateTime date = ZonedDateTime.now();
+Console.textIO.getTextTerminal().println("当前日期为：ZonedDateTime.now() = " + date);
+Console.textIO.getTextTerminal().println("增加20秒的方法：date.plusSeconds(20) = " + date.plusSeconds(20));
+Console.textIO.getTextTerminal().println("增加10分钟的方法：date.plusMinutes(10) = " + date.plusMinutes(10));
+Console.textIO.getTextTerminal().println("增加3小时的方法：date.plusHours(3) = " + date.plusHours(3));
+Console.textIO.getTextTerminal().println("增加一天的方法： date.plusDays(1) = " + date.plusDays(1));
+Console.textIO.getTextTerminal().println("增加一周的方法： date.plusWeeks(1) = " + date.plusWeeks(1));
+Console.textIO.getTextTerminal().println("增加一个月的方法：date.plusMonths(1) = " + date.plusMonths(1));
+Console.textIO.getTextTerminal().println("增加一年的方法：date.plusYears(1) = s" + date.plusYears(1));
+````
+
+详细的代码在ManipulatingDatesAndTimesTutorials类中
+
 ## 5. Period的使用案例
+
+
 
 ## 6. Duration的使用案例
 
