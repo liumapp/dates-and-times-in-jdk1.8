@@ -88,6 +88,21 @@ gradle build
 
 ## 3. LocalDate与LocalTime与ZonedDateTime的创建与使用
 
+jdk1.8中，新引入的时间处理类中，个人感觉以下四个应该会是使用频率最高的四个：
+
+* LocalDate包含年月日的信息
+
+    比如
+
+* LocalTime包含时分秒的信息
+
+* LocalDateTime包含年月日时分秒的信息
+
+* ZonedDateTime包含年月日时分秒+时区的信息
+
+这四个类的使用方法在案例的CreatingDatesAndTimesTutorials中有详细介绍
+
+
 ## 4. 对ZonedDateTime对象进行时间的修改
 
 ## 5. Period的使用案例
@@ -115,15 +130,7 @@ gradle build
 
 * LocalDate&LocalTime&LocalDateTime&ZonedDateTime
 
-    LocalDate包含年月日的信息
-    
-    LocalTime包含时分秒的信息
-    
-    LocalDateTime包含年月日时分秒的信息
-    
-    ZonedDateTime包含年月日时分秒+时区的信息
-    
-    这四个类的使用方法在案例的CreatingDatesAndTimesTutorials中有详细介绍
+   
 
 * OffsetDateTime
 
