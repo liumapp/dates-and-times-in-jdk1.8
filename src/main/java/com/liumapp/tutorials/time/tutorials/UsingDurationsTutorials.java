@@ -29,6 +29,8 @@ public class UsingDurationsTutorials implements SimpleTutorials {
             this.demo1();
             ConsoleHelper.showDividingLine();
             this.demo2();
+            ConsoleHelper.showDividingLine();
+            this.demo3();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -69,6 +71,13 @@ public class UsingDurationsTutorials implements SimpleTutorials {
         }
         Console.textIO.getTextTerminal().println("Now A is late than B ...");
         Console.textIO.getTextTerminal().println("A is : " + A + " B is : " + B);
+    }
+
+    /**
+     * 创建duration的不同方式
+     */
+    private void demo3 () {
+
     }
 
 

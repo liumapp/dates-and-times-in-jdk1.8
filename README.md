@@ -176,6 +176,13 @@ Console.textIO.getTextTerminal().println("1年零1个礼拜后的时间：" + lo
 
 ## 6. Duration的使用案例
 
+Durations跟Period相对应，它是用来修改时、分、秒级别的时间
+
+比如
+
+````java
+
+````
 
 
 ## 7. ChronoUnit的使用案例
