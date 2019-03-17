@@ -7,13 +7,17 @@
     * [1.1 编译](#1.1-编译)
     * [1.2 直接启动案例demo](#1.2-直接启动案例demo)
     * [1.3 导入IDEA启动](#1.3-导入IDEA启动)
-* [how to use](#how-to-use)
-	* [Docker](#docker)
-		* [installation images](#installation-images)
-		* [starting container](#starting-container)
-		* [stoping container](#stoping-container)
-		* [remove images](#remove-images)
-	* [IDEA](#idea)
+* [2. Instant获取UTC标准时间](#2.-Instant获取UTC标准时间)    
+* [3. LocalDate与LocalTime与ZonedDateTime的创建与使用](#3.-LocalDate与LocalTime与ZonedDateTime的创建与使用)
+* [4. 对ZonedDateTime对象进行时间的修改](#4.-对ZonedDateTime对象进行时间的修改)
+* [5. Period的使用案例](#5.-Period的使用案例)
+* [6. Duration的使用案例](#6.-Duration的使用案例)
+* [7. ChronoUnit的使用案例](#7.-ChronoUnit的使用案例)
+* [8. TemporalAdjusters的使用案例](#8.-TemporalAdjusters的使用案例)
+* [9. Clock的使用案例](#9.-Clock的使用案例)
+* [10. 对日期进行格式化输出](#10.-对日期进行格式化输出)
+* [11. 各种类型转ZonedDateTime](#11.-各种类型转ZonedDateTime)
+* [12. 理解时区的概念](#12.-理解时区的概念)
 
 ## 1. 如何运行案例代码
 
@@ -62,9 +66,9 @@ gradle build
    进入Instant.now()的源码，我们可以看到
    
    ````java
-   public static Clock systemUTC() {
-       return new SystemClock(ZoneOffset.UTC);
-   }
+       public static Clock systemUTC() {
+           return new SystemClock(ZoneOffset.UTC);
+       }
    ````
    
    它所采用的时区为UTC标准时区的时间，也就是英国伦敦的时间，所以直接Instant.now()获取到的时间并不是我们北京时间，这一点跟new date()后默认是本地时间有很大区别
