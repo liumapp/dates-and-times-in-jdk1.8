@@ -27,7 +27,7 @@ public class UsingClockTutorials implements SimpleTutorials {
             ConsoleHelper.showDividingLine();
             this.demo2();
             ConsoleHelper.showDividingLine();
-            this.demo3();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -71,24 +71,6 @@ public class UsingClockTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("比当前时间提前72个小时的时间：" + clock.instant());
     }
 
-    /**
-     *
-     */
-    private void demo3 () {
-        Clock clockDefaultZone = Clock.systemDefaultZone();
-        Clock clocktick = Clock.tick(clockDefaultZone, Duration.ofHours(2));
-
-        System.out.println("Clock Default Zone: " + clockDefaultZone.instant());
-        System.out.println("Clock tick: " + clocktick.instant());
-
-        ZoneId zoneId = ZoneId.of("GMT+8");
-        Clock clock = Clock.tickSeconds(zoneId);
-        System.out.println(clock.instant());
-
-        clock = Clock.tickMinutes(zoneId);
-
-        System.out.println(clock.instant());
-    }
 
 }
 
