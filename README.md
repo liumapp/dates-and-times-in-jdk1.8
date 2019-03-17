@@ -218,10 +218,32 @@ Console.textIO.getTextTerminal().println("1978年3月2号0时0分距离现在" +
 	
 ## 8. TemporalAdjusters的使用案例
 
+TemporalAdjusters翻译过来叫临时调节器，跟ChronoUnit做对比的话，他可以帮助我们使用指定个数的时间单位获取未来或者过去的时间点
 
+比如
 
+````java
+Console.textIO.getTextTerminal().println("demo1演示了通过当前时间点，获取指定个日、月的时间点");
+LocalDate localDate = LocalDate.now();
+LocalDate firstDayOfThisMonth = localDate.with(TemporalAdjusters.firstDayOfMonth());
+LocalDate lastDayOfTHisMonth = localDate.with(TemporalAdjusters.lastDayOfMonth());
+LocalDate nextMonday = localDate.with(TemporalAdjusters.next(DayOfWeek.MONDAY));
+LocalDate firstDayOfNextMonth = localDate.with(TemporalAdjusters.firstDayOfNextMonth());
+Console.textIO.getTextTerminal().println("这个月的第一个天：" + firstDayOfThisMonth + "\n" +
+    "这个月的最后一天：" + lastDayOfTHisMonth + "\n" +
+    "下一个星期一：" + nextMonday + "\n" +
+    "下个月的第一天：" + firstDayOfNextMonth);
+````
+
+不过一般而言，自定义的TemporalAdjuster更有实用性
+
+比如定义：每一年的第12个月的第25天，就可以获取到下一个圣诞节
+   
+详情见UsingTemporalAdjustersTutorials
 
 ## 9. Clock的使用案例
+
+
 
 ## 10. 对日期进行格式化输出
 
