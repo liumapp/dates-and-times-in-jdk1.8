@@ -20,6 +20,7 @@
 * [12. 理解时区的概念](#12-理解时区的概念)
 * [13. 老版本的Date类型或者字符串转ZonedDateTime](#13-老版本的Date类型或者字符串转ZonedDateTime)
 * [参考资料](#参考资料)
+
 ## 1. 如何运行案例代码
 
 ### 1.1 编译
@@ -152,9 +153,30 @@ Console.textIO.getTextTerminal().println("增加一年的方法：date.plusYears
 
 ## 5. Period的使用案例
 
+Period一般是用来修改日、周、月、年级别的日期，所以它一般与LocalDate、LocalDateTime、ZonedDateTime配套使用，但不能跟LocalTime搭配
 
+比如
+
+````java
+Period everyYear = Period.ofYears(1);
+Period everyThreeMonths = Period.ofMonths(3);
+Period everyThreeWeeks = Period.ofWeeks(3);
+Period everyTwoDays = Period.ofDays(2);
+Period everyYearAndOneWeek = Period.of(1, 0, 7);
+LocalDate localDate = LocalDate.now();
+Console.textIO.getTextTerminal().println("当前时间：" + localDate);
+Console.textIO.getTextTerminal().println("1年后的时间：" + localDate.plus(everyYear));
+Console.textIO.getTextTerminal().println("3个月后的时间：" + localDate.plus(everyThreeMonths));
+Console.textIO.getTextTerminal().println("3周后的时间：" + localDate.plus(everyThreeWeeks));
+Console.textIO.getTextTerminal().println("2天后的时间：" + localDate.plus(everyTwoDays));
+Console.textIO.getTextTerminal().println("1年零1个礼拜后的时间：" + localDate.plus(everyYearAndOneWeek));
+````
+
+更具体的案例可以在UsingPeriodsTutorials中查看
 
 ## 6. Duration的使用案例
+
+
 
 ## 7. ChronoUnit的使用案例
 	
