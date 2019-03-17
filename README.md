@@ -19,7 +19,7 @@
 * [11. 各种类型转ZonedDateTime](#11-各种类型转ZonedDateTime)
 * [12. 理解时区的概念](#12-理解时区的概念)
 * [13. 老版本的Date类型或者字符串转ZonedDateTime](#13-老版本的Date类型或者字符串转ZonedDateTime)
-
+* [参考资料](#参考资料)
 ## 1. 如何运行案例代码
 
 ### 1.1 编译
@@ -265,7 +265,7 @@ long secondNumber = localDateTime.toEpochSecond(ZoneOffset.UTC);
 
 再具体一点：
 
-## 参考资料：
+## 参考资料
 
 * https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html
 
