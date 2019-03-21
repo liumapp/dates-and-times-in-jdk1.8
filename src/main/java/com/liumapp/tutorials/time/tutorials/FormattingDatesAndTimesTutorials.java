@@ -99,7 +99,5 @@ public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
         Instant instant = Instant.ofEpochMilli(Long.parseLong(date2));
         ZonedDateTime time2 = instant.atZone(ZoneId.of("GMT+8"));
         Console.textIO.getTextTerminal().println("现有时间戳 " + date2 + " 经过转换后获得的日期为：" + formatter1.format(time2));
-
-
     }
 }
