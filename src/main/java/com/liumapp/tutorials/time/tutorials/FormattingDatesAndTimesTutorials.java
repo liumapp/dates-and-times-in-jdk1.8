@@ -92,10 +92,11 @@ public class FormattingDatesAndTimesTutorials implements SimpleTutorials {
         Console.textIO.getTextTerminal().println("demo4演示了微秒数转指定日期格式以及指定日期格式转微妙数");
         String date1 = "28/1/2019 13:44:29";
         String date2 = "1553062540363";
-        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("M/d/yyyy hh:mm:ss");
-        LocalDateTime time1 = LocalDateTime.parse(date1, formatter1);
-        Console.textIO.getTextTerminal().println("现有时间" + date1 + " 经过转换后获得秒数为：" + time1.getSecond());
-        Instant instant = Instant.parse(date2);
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("d/M/yyyy HH:mm:ss");
+        LocalDateTime localDateTime = LocalDateTime.parse(date1, formatter1);
+        ZonedDateTime zonedDateTime = localDateTime.atZone(ZoneId.of("GMT+8"));
+        Console.textIO.getTextTerminal().println("现有时间" + date1 + " 经过转换后获得微秒数为：" + zonedDateTime.toInstant().toEpochMilli());
+        Instant instant = Instant.ofEpochMilli(Long.parseLong(date2));
         ZonedDateTime time2 = instant.atZone(ZoneId.of("GMT+8"));
         Console.textIO.getTextTerminal().println("现有时间戳 " + date2 + " 经过转换后获得的日期为：" + formatter1.format(time2));
 
