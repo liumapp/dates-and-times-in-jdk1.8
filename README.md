@@ -342,7 +342,7 @@ Console.textIO.getTextTerminal().println("如果输出的时间是类似这种�
         "也就是说，此时此刻，GMT/UTC的标准时间，或者说英国伦敦的时间是2019-03-14T13:44:49.468\n");
 Console.textIO.getTextTerminal().println("那么如何通过GMT的偏移量获取指定时区的时间呢？\n" +
         "我们这里以日本东京为例，因为东京是在东9时区，所以他的UTC/GMT偏移量为+9\n" +
-        "那么他的时间将会比我们晚一个小时");
+        "那么他的时间将会比我们早一个小时");
 
 OffsetDateTime offsetDateTimeOfTokyo = OffsetDateTime.now(ZoneId.of("GMT+9"));
 OffsetDateTime offsetDateTimeOfTokyo2 = OffsetDateTime.now(ZoneId.of("UTC+09:00"));
